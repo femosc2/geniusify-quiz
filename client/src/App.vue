@@ -1,6 +1,11 @@
 <template>
   <div id="app">
-    <Genre />
+    <div v-if="isGenreChoosen === null">
+      <Genre @genreSelected="genreChoosen" />
+    </div>
+    <div v-else>
+      <p> Genre is chosen </p>
+    </div>
   </div>
 </template>
 
@@ -13,6 +18,17 @@ export default {
   components: {
     HelloWorld,
     Genre
+  },
+  data: function() {
+    return {
+    isGenreChoosen: null
+    }
+  },
+  methods: {
+    genreChoosen(genreSelected) {
+      this.isGenreChoosen = genreSelected
+      console.log("app state" + this.isGenreChoosen)
+    }
   }
 }
 </script>

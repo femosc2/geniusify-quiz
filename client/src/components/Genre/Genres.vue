@@ -5,7 +5,6 @@
 </template>
 
 <script>
-
 export default {
     data: function() {
         return {
@@ -22,7 +21,7 @@ export default {
         chooseGenre(genre) {
             this.genreChosen = genre;
             console.log(genre);
-            this.$emit("genreChoosen", this.genreChosen)
+            this.$emit("genreSelected", this.genreChosen)
         }
     }
 }
