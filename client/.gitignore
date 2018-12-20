@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 /dist
+/web-api-auth-example
+src/apiKeys.js
 
 # local env files
 .env.local
