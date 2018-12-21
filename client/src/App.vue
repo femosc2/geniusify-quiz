@@ -65,9 +65,10 @@ export default {
           }
           this.playlist = resultArray;
           console.log(this.playlist)
-          this.song = this.playlist[12].items[this.randomNumber()].track.name
-          this.artist = this.playlist[12].items[this.randomNumber()].track.artists[0].name
-          this.image = this.playlist[12].items[this.randomNumber()].track.album.images[0].url
+          let randomNumber = this.randomNumber();
+          this.song = this.playlist[12].items[randomNumber].track.name
+          this.artist = this.playlist[12].items[randomNumber].track.artists[0].name
+          this.image = this.playlist[12].items[randomNumber].track.album.images[1].url
         });
 
     },
