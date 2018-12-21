@@ -22,14 +22,15 @@ export default {
   }
 };
 
-
-
-// <button v-for="genre in genres" :key="genre.id" @click="chooseGenre(genre.genreName)"> {{genre.genreName}}</button>
-
 </script>
 <style>
   .genreButton {
+    color: #0b8793;
+    font-size: 2rem;
     padding: 5rem;
+    background: white;
+    margin: 1rem;
+    border-radius: 1rem;
   }
 </style>
 
