@@ -1,10 +1,16 @@
 <template>
   <div id="app">
+    <!-- <div v-if="isNameChoosen === null">
+      <input type="text" v-model="playerName">
+    </div> -->
     <div v-if="isGenreChoosen === null">
       <Genre @genreSelected="genreChoosen"/>
     </div>
     <div v-else>
-      <p @click="authorizeSpotify">Genre is chosen</p>
+      <p @click="authorizeSpotify"> What song is it?</p>
+      <p> {{ artist }}</p>
+      <p> {{ song }}</p>
+      <img :src="image" alt="">
     </div>
   </div>
 </template>
@@ -21,8 +27,12 @@ export default {
   },
   data: function() {
     return {
+      playerName: null,
       isGenreChoosen: null,
-      playlist: null
+      playlist: "",
+      song: "",
+      artist: "",
+      image: ""
     };
   },
   methods: {
@@ -34,8 +44,17 @@ export default {
       this.$http.get("");
     },
     authorizeSpotify() {
+      if (this.isGenreChoosen === "Rock") {
+        this.playlist = "https://api.spotify.com/v1/playlists/3qu74M0PqlkSV76f98aqTd"
+      } else if (this.isGenreChoosen === "Christmas") {
+        this.playlist = "https://api.spotify.com/v1/playlists/5OP7itTh52BMfZS1DJrdlv"
+      } else if (this.isGenreChoosen === "Pop") {
+        this.playlist = "https://api.spotify.com/v1/playlists/3ZgmfR6lsnCwdffZUan8EA"
+      } else if (this.isGenreChoosen === "Rap") {
+        this.playlist = "https://api.spotify.com/v1/playlists/21sgjLGbnEgNMTpjnaO2b6"
+      }
       this.$http
-        .get("https://api.spotify.com/v1/playlists/59ZbFPES4DQwEjBpWHzrtC")
+        .get(this.playlist)
         .then(response => {
           return response.json();
         })
@@ -45,15 +64,16 @@ export default {
             resultArray.push(data[key]);
           }
           this.playlist = resultArray;
-          console.log(this.playlist[12].items[1].track.name);
+          console.log(this.playlist)
+          this.song = this.playlist[12].items[this.randomNumber()].track.name
+          this.artist = this.playlist[12].items[this.randomNumber()].track.artists[0].name
+          this.image = this.playlist[12].items[this.randomNumber()].track.album.images[0].url
         });
 
-      // this.$http.get("https://api.spotify.com/v1/playlists/59ZbFPES4DQwEjBpWHzrtC")
-      //             .then(response => {
-      //                 console.log(response)
-      //             }, error => {
-      //             console.log(error)}
-      //             )
+    },
+    randomNumber() {
+      let randomNumber = Math.floor(Math.random() * 101)
+      return randomNumber
     }
   },
   created() {
