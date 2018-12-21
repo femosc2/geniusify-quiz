@@ -16,13 +16,11 @@
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
 import Genre from "./components/Genre/Genres.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld,
     Genre
   },
   data: function() {
@@ -36,12 +34,14 @@ export default {
     };
   },
   methods: {
+    // Method GET's playlist
     loadPlaylists() {
       this.$http.get("");
     },
+    //
     genreChoosen(genreSelected) {
       this.isGenreChoosen = genreSelected
-      console.log("kuk" + this.isGenreChoosen)
+      console.log()
     },
     authorizeSpotify() {
       if (this.isGenreChoosen === "Rock") {
@@ -64,7 +64,6 @@ export default {
             resultArray.push(data[key]);
           }
           this.playlist = resultArray;
-          console.log(this.playlist)
           let randomNumber = this.randomNumber();
           this.song = this.playlist[12].items[randomNumber].track.name
           this.artist = this.playlist[12].items[randomNumber].track.artists[0].name

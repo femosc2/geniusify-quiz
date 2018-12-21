@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- When click on genreButton, run function chosenGenre which loops over genres. Displays name of each Genres-->
     <a class="genreButton" @click="chosenGenre(genre.genreName)" v-for="genre in genres" :key="genre.id">{{ genre.genreName }}</a>
   </div>
 </template>
@@ -11,10 +12,12 @@ export default {
       genreChosen: null
     }
   },
-
+  // props collects a list of genres from parent Ganre.vue
   props:["genres"],
   
   methods: {
+    // Method changing genreChosen from null to the selected genre. 
+    //$emit creates the event genreSelected and sends it with genreChosen to Genre.vue
     chosenGenre(genre) {
       this.genreChosen = genre;
       this.$emit("genreSelected" , this.genreChosen)
