@@ -36,12 +36,12 @@ export default {
     };
   },
   methods: {
-    genreChoosen(genreSelected) {
-      this.isGenreChoosen = genreSelected;
-      console.log("app state " + this.isGenreChoosen);
-    },
     loadPlaylists() {
       this.$http.get("");
+    },
+    genreChoosen(genreSelected) {
+      this.isGenreChoosen = genreSelected
+      console.log("kuk" + this.isGenreChoosen)
     },
     authorizeSpotify() {
       if (this.isGenreChoosen === "Rock") {

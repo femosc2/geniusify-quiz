@@ -9,7 +9,7 @@ Vue.use(VueResource)
 Vue.config.productionTip = false
 
 // BQDTlmwYgms4HV8Rn8UTi2dJR4KiyjNxjpAd-5BRvDIguGgoDkTJCJolzJC2cFIW6mCLbCUdd7MFeXGT_iE
-Vue.http.options.headers = { "Authorization": "Bearer " + "BQC28VUVtE6-4ZBwYuelUwDOJ0k3FSuH22W2gOlFi_hoV0G1FW-sfVAGmQ6ftrwB9dxp4hfxKeydFA6FApc" }
+Vue.http.options.headers = { "Authorization": "Bearer " + "BQCF67E6iLtXRjwidhPcXz0A5bcOSIpbu-cSJ5Xxp72BDPpxLi4r4tiG9XzKPrcFI4D5UmG9GsX_Qcu4uxo" }
 
 new Vue({
   render: h => h(App),

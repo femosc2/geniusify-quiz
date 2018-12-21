@@ -1,10 +1,12 @@
 <template>
     <div>
-        <button v-for="genre in genres" :key="genre.id" @click="chooseGenre(genre.genreName)"> {{genre.genreName}}</button>
+        <genre-list @genreSelected="genreChoosen" :genres="genres" />
     </div>
 </template>
 
 <script>
+import GenreList from "./GenresList.vue";
+
 export default {
     data: function() {
         return {
@@ -14,16 +16,21 @@ export default {
             {genreName: "Rap", id: 3},
             {genreName: "Christmas", id: 4}
             ],
-        genreChosen: null
+        genreChosen: null,
+        isGenreChoosen: null
         }
     },
+    components: {
+        GenreList
+    },
     methods: {
-        chooseGenre(genre) {
-            this.genreChosen = genre;
-            console.log(genre);
-            this.$emit("genreSelected", this.genreChosen)
-        }
-    }
+        genreChoosen(genreSelected) {
+            this.isGenreChoosen = genreSelected;
+            console.log("app state " + this.isGenreChoosen);
+            this.$emit("genreSelected" , this.isGenreChoosen)
+    },      
+
+}
 }
 </script>
 
