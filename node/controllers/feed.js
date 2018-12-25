@@ -1,4 +1,3 @@
-const Token =  require("../authorization/authorize")
 const axios = require("axios")
 
 // token = Token.getToken()
@@ -19,8 +18,21 @@ let christmasSong = ""
 let christmasArtist = ""
 let christmasImage = ""
 
+let token = "asd"
+
+const getToken = () => {
+    axios.get("http://localhost:9019/token")
+      .then((response) => {
+          console.log(response.data.Token.id)
+          token = response.data.Token.id;
+      })
+          .catch((error) => {
+              console.log(error);
+      })
+}
+
 const getPopPlaylist = () => {
-    axios.get("https://api.spotify.com/v1/playlists/3ZgmfR6lsnCwdffZUan8EA/tracks", {headers : {'Authorization' : "Bearer " + "BQALCxzb9SLVdFAJ2XzS4f3RqRZ7XkNbotlBi0bvKKBF7jRuREl0NE1iSHA8TcBWD6dHFliB6UpXeAgrxPU"}})
+    axios.get("https://api.spotify.com/v1/playlists/3ZgmfR6lsnCwdffZUan8EA/tracks", {headers : {'Authorization' : "Bearer " + token}})
       .then((response) => {
           const resultArray = [];
             for (let key in response) {
@@ -35,12 +47,12 @@ const getPopPlaylist = () => {
             // console.log(playlist)
       })
           .catch((error) => {
-              console.log(error);
+              console.log("error");
       })
 }
 
 const getRapPlaylist = () => {
-    axios.get("https://api.spotify.com/v1/playlists/21sgjLGbnEgNMTpjnaO2b6/tracks", {headers : {'Authorization' : "Bearer " + "BQALCxzb9SLVdFAJ2XzS4f3RqRZ7XkNbotlBi0bvKKBF7jRuREl0NE1iSHA8TcBWD6dHFliB6UpXeAgrxPU"}})
+    axios.get("https://api.spotify.com/v1/playlists/21sgjLGbnEgNMTpjnaO2b6/tracks", {headers : {'Authorization' : "Bearer " + token}})
       .then((response) => {
           const resultArray = [];
             for (let key in response) {
@@ -55,12 +67,12 @@ const getRapPlaylist = () => {
             // console.log(playlist)
       })
           .catch((error) => {
-              console.log(error);
+              console.log("error");
       })
 }
 
 const getRockPlaylist = () => {
-    axios.get("https://api.spotify.com/v1/playlists/3qu74M0PqlkSV76f98aqTd/tracks", {headers : {'Authorization' : "Bearer " + "BQALCxzb9SLVdFAJ2XzS4f3RqRZ7XkNbotlBi0bvKKBF7jRuREl0NE1iSHA8TcBWD6dHFliB6UpXeAgrxPU"}})
+    axios.get("https://api.spotify.com/v1/playlists/3qu74M0PqlkSV76f98aqTd/tracks", {headers : {'Authorization' : "Bearer " + token}})
       .then((response) => {
           const resultArray = [];
             for (let key in response) {
@@ -75,12 +87,12 @@ const getRockPlaylist = () => {
             // console.log(playlist)
       })
           .catch((error) => {
-              console.log(error);
+              console.log("error");
       })
 }
 
 const getChristmasPlaylist = () => {
-    axios.get("https://api.spotify.com/v1/playlists/5OP7itTh52BMfZS1DJrdlv/tracks", {headers : {'Authorization' : "Bearer " + "BQALCxzb9SLVdFAJ2XzS4f3RqRZ7XkNbotlBi0bvKKBF7jRuREl0NE1iSHA8TcBWD6dHFliB6UpXeAgrxPU"}})
+    axios.get("https://api.spotify.com/v1/playlists/5OP7itTh52BMfZS1DJrdlv/tracks", {headers : {'Authorization' : "Bearer " + token}})
       .then((response) => {
           const resultArray = [];
             for (let key in response) {
@@ -95,7 +107,7 @@ const getChristmasPlaylist = () => {
             // console.log(playlist)
       })
           .catch((error) => {
-              console.log(error);
+              console.log("error");
       })
 }
 
@@ -126,10 +138,10 @@ exports.getChristmas = (req, res, next) => {
             Song: {id: new Date().toISOString(), song: christmasSong, artist: christmasArtist, image: christmasImage}
         });
 };
-
-setInterval(function(){
-    getPopPlaylist()
-    getRapPlaylist()
-    getRockPlaylist()
-    getChristmasPlaylist()
+ setInterval(function(){
+     getToken()
+     getPopPlaylist()
+     getRapPlaylist()
+     getRockPlaylist()
+     getChristmasPlaylist()
 }, 5*1000)

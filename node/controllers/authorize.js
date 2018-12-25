@@ -1,7 +1,7 @@
 var axios = require("axios")
 
-var client_id = '7040414f8abb424db8e774d24c0aa737'; // Your client id
-var client_secret = 'f93f06559dae407cb4c3c378827dd146'; // Your secret
+var client_id = 'edb6f939e332455483f8e58066d110aa'; // Your client id
+var client_secret = 'cadb6cd3c34f4863a85ba3b246857d2a'; // Your secret
 
 let spotifyToken = ""
 
@@ -23,13 +23,16 @@ const getToken = () => {
 }).then(function (response) {
     spotifyToken = response.data.access_token
     console.log(spotifyToken)
-    return spotifyToken
+
 }).catch(function (error) {
 });
 }
 
-getToken()
+exports.getToken = (req, res, next) => {
+    res.status(200).json(
+        {
+            Token: {id: spotifyToken }
+        });
+};
 
-module.exports = {
-    getToken
-}
+getToken()
