@@ -5,10 +5,10 @@ const tokenController = require("../controllers/authorize")
 
 const router = express.Router();
 
-router.get("/pop", feedController.getPop)
-router.get("/rap", feedController.getRap)
-router.get("/rock", feedController.getRock)
-router.get("/christmas", feedController.getChristmas)
-router.get("/token", tokenController.getToken)
+router.get("/pop", feedController.getPop) // Route to the Pop song
+router.get("/rap", feedController.getRap) //Route to the Rap song
+router.get("/rock", feedController.getRock) // Route to the Rock song
+router.get("/christmas", feedController.getChristmas) // Route to the Christmas song
+router.get("/token", tokenController.getToken) // Route to the token
 
 module.exports = router;

@@ -4,10 +4,10 @@
       <input type="text" v-model="playerName">
     </div> -->
     <div v-if="isGenreChoosen === null">
-      <Genre @genreSelected="genreChoosen" @click="setSong"/>
+      <Genre @genreSelected="genreChoosen"/>
     </div>
     <div v-else>
-      <p @click="setSong"> {{ game }}</p>
+      <p @click="setSong"> {{ game }}</p> <!-- Starts the game -->
       <p> {{ artist }}</p>
       <p> {{ song }}</p>
       <p> {{ lyrics }} </p>
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import Genre from "./components/Genre/Genres.vue";
+import Genre from "./components/Genre/Genres.vue"; 
 const axios = require("axios")
 
 export default {
@@ -39,10 +39,12 @@ export default {
   },
   methods: {
     genreChoosen(genreSelected) {
+      // Function which recieves the current Genre
       this.isGenreChoosen = genreSelected
       console.log()
     },
     getSongs() {
+      // Function for retrieving the song, artist, image and lyrics
       if (this.isGenreChoosen === "Rock") {
         this.playlist = "http://localhost:9021/rock"
       } else if (this.isGenreChoosen === "Christmas") {
@@ -52,24 +54,25 @@ export default {
       } else if (this.isGenreChoosen === "Rap") {
         this.playlist = "http://localhost:9021/rap"
       }
-      axios.get(this.playlist)
+      axios.get(this.playlist) //get from the chosen playlist
         .then(response => {
           const resultArray = [];
-          for (let key in response) {
+          for (let key in response) { //organizes the json file
             resultArray.push(response[key]);
           }
           this.playlist = resultArray;
-          this.song = this.playlist[0].Song.song
+          this.song = this.playlist[0].Song.song //Playlist[0] = Object which stores information about song
           this.artist = this.playlist[0].Song.artist
           this.image = this.playlist[0].Song.image
           this.lyrics = this.playlist[0].Song.lyrics
         })
 
     },
-    setSong() { //Auto update the song
-      this.getSongs()
+    setSong() {
+      //function to automaticlly update the current songs to the front-end
+      this.getSongs() // Chooses a song as soon as it is clicked
       this.game = "What lyrics are missing?"
-      setInterval(() => {
+      setInterval(() => { //Updates every 5 second to see what song is currently selected
         this.getSongs()
       }, 5*1000)
     }
