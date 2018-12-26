@@ -5,14 +5,14 @@ const feedRoutes = require("./routes/genre")
 
 const app = express();
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
     next();
-  });
-  
+});
+
 
 app.use(bodyParser.json());
 app.use('/', feedRoutes);
-console.log("app is istening on 9020")
+console.log("app is listening on 9020")
 app.listen(9020);

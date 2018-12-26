@@ -17,6 +17,7 @@
 
 <script>
 import Genre from "./components/Genre/Genres.vue";
+const axios = require("axios")
 
 export default {
   name: "app",
@@ -45,30 +46,26 @@ export default {
     },
     authorizeSpotify() {
       if (this.isGenreChoosen === "Rock") {
-        this.playlist = "https://api.spotify.com/v1/playlists/3qu74M0PqlkSV76f98aqTd"
+        this.playlist = "http://localhost:9020/rock"
       } else if (this.isGenreChoosen === "Christmas") {
-        this.playlist = "https://api.spotify.com/v1/playlists/5OP7itTh52BMfZS1DJrdlv"
+        this.playlist = "http://localhost:9020/christmas"
       } else if (this.isGenreChoosen === "Pop") {
-        this.playlist = "https://api.spotify.com/v1/playlists/3ZgmfR6lsnCwdffZUan8EA"
+        this.playlist = "http://localhost:9020/pop"
       } else if (this.isGenreChoosen === "Rap") {
-        this.playlist = "https://api.spotify.com/v1/playlists/21sgjLGbnEgNMTpjnaO2b6"
+        this.playlist = "http://localhost:9020/rap"
       }
-      this.$http
-        .get(this.playlist)
+      axios.get(this.playlist)
         .then(response => {
-          return response.json();
-        })
-        .then(data => {
           const resultArray = [];
-          for (let key in data) {
-            resultArray.push(data[key]);
+          for (let key in response) {
+            resultArray.push(response[key]);
           }
           this.playlist = resultArray;
-          let randomNumber = this.randomNumber();
-          this.song = this.playlist[12].items[randomNumber].track.name
-          this.artist = this.playlist[12].items[randomNumber].track.artists[0].name
-          this.image = this.playlist[12].items[randomNumber].track.album.images[1].url //test
-        });
+          console.log(resultArray)
+          this.song = this.playlist[0].Song.song
+          this.artist = this.playlist[0].Song.artist
+          this.image = this.playlist[0].Song.image //test
+        })
 
     },
     randomNumber() {
