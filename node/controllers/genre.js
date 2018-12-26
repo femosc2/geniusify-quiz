@@ -21,9 +21,8 @@ let christmasImage = ""
 let token = "asd"
 
 const getToken = () => {
-    axios.get("http://localhost:9019/token")
+    axios.get("http://localhost:9020/token")
       .then((response) => {
-          console.log(response.data.Token.id)
           token = response.data.Token.id;
       })
           .catch((error) => {
@@ -43,11 +42,12 @@ const getPopPlaylist = () => {
             song = playlist[5].items[randomNumber].track.name
             artist = playlist[5].items[randomNumber].track.artists[0].name
             image = playlist[5].items[randomNumber].track.album.images[1].url
+            console.log("Pop song updated!")
             return playlist
             // console.log(playlist)
       })
           .catch((error) => {
-              console.log("error");
+              console.log("Access token not yet updated, please wait 5 seconds.");
       })
 }
 
@@ -63,11 +63,12 @@ const getRapPlaylist = () => {
             rapSong = playlist[5].items[randomNumber].track.name
             rapArtist = playlist[5].items[randomNumber].track.artists[0].name
             rapImage = playlist[5].items[randomNumber].track.album.images[1].url
+            console.log("Rap song updated!")
             return playlist
             // console.log(playlist)
       })
           .catch((error) => {
-              console.log("error");
+              console.log("Access token not yet updated, please wait 5 seconds.");
       })
 }
 
@@ -83,11 +84,12 @@ const getRockPlaylist = () => {
             rockSong = playlist[5].items[randomNumber].track.name
             rockArtist = playlist[5].items[randomNumber].track.artists[0].name
             rockImage = playlist[5].items[randomNumber].track.album.images[1].url
+            console.log("Rock song updated!")
             return playlist
             // console.log(playlist)
       })
           .catch((error) => {
-              console.log("error");
+              console.log("Access token not yet updated, please wait 5 seconds.");
       })
 }
 
@@ -103,11 +105,12 @@ const getChristmasPlaylist = () => {
             christmasSong = playlist[5].items[randomNumber].track.name
             christmasArtist = playlist[5].items[randomNumber].track.artists[0].name
             christmasImage = playlist[5].items[randomNumber].track.album.images[1].url
+            console.log("Christmas song updated!")
             return playlist
             // console.log(playlist)
       })
           .catch((error) => {
-              console.log("error");
+              console.log("Access token not yet updated, please wait 5 seconds.");
       })
 }
 
@@ -138,10 +141,14 @@ exports.getChristmas = (req, res, next) => {
             Song: {id: new Date().toISOString(), song: christmasSong, artist: christmasArtist, image: christmasImage}
         });
 };
- setInterval(function(){
-     getToken()
-     getPopPlaylist()
-     getRapPlaylist()
-     getRockPlaylist()
-     getChristmasPlaylist()
+
+setInterval(function() {
+    getToken()
+}, 1*1000)
+
+setInterval(function(){
+    getPopPlaylist()
+    getRapPlaylist()
+    getRockPlaylist()
+    getChristmasPlaylist()
 }, 5*1000)

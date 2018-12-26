@@ -22,7 +22,6 @@ const getToken = () => {
     }
 }).then(function (response) {
     spotifyToken = response.data.access_token
-    console.log(spotifyToken)
 
 }).catch(function (error) {
 });
