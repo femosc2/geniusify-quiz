@@ -21,7 +21,7 @@ let christmasImage = ""
 let token = "asd"
 
 const getToken = () => {
-    axios.get("http://localhost:9020/token")
+    axios.get("http://localhost:9021/token")
       .then((response) => {
           token = response.data.Token.id;
       })
@@ -117,28 +117,28 @@ const getChristmasPlaylist = () => {
 exports.getPop = (req, res, next) => {
     res.status(200).json(
         {
-            Song: {id: new Date().toISOString(), song: song, artist: artist, image: image}
+            Song: {id: new Date().toISOString(), song: song, artist: artist, image: image, lyrics: "The lyrics of the pop song"}
         });
 };
 
 exports.getRap = (req, res, next) => {
     res.status(200).json(
         {
-            Song: {id: new Date().toISOString(), song: rapSong, artist: rapArtist, image: rapImage}
+            Song: {id: new Date().toISOString(), song: rapSong, artist: rapArtist, image: rapImage, lyrics: "The lyrics of the rap song"}
         });
 };
 
 exports.getRock = (req, res, next) => {
     res.status(200).json(
         {
-            Song: {id: new Date().toISOString(), song: rockSong, artist: rockArtist, image: rockImage}
+            Song: {id: new Date().toISOString(), song: rockSong, artist: rockArtist, image: rockImage, lyrics: "The lyrics of the rock song"}
         });
 };
 
 exports.getChristmas = (req, res, next) => {
     res.status(200).json(
         {
-            Song: {id: new Date().toISOString(), song: christmasSong, artist: christmasArtist, image: christmasImage}
+            Song: {id: new Date().toISOString(), song: christmasSong, artist: christmasArtist, image: christmasImage, lyrics: "The lyrics of the christmas song"}
         });
 };
 
@@ -146,9 +146,16 @@ setInterval(function() {
     getToken()
 }, 1*1000)
 
+setTimeout(function() {
+    getPopPlaylist()
+    getRapPlaylist()
+    getRockPlaylist()
+    getChristmasPlaylist()
+}, 2*1000)
+
 setInterval(function(){
     getPopPlaylist()
     getRapPlaylist()
     getRockPlaylist()
     getChristmasPlaylist()
-}, 5*1000)
+}, 15*1000)

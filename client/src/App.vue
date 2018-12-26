@@ -4,12 +4,13 @@
       <input type="text" v-model="playerName">
     </div> -->
     <div v-if="isGenreChoosen === null">
-      <Genre @genreSelected="genreChoosen"/>
+      <Genre @genreSelected="genreChoosen" @click="setSong"/>
     </div>
     <div v-else>
-      <p @click="authorizeSpotify"> What song is it?</p>
+      <p @click="setSong"> {{ game }}</p>
       <p> {{ artist }}</p>
       <p> {{ song }}</p>
+      <p> {{ lyrics }} </p>
       <img :src="image" alt="">
     </div>
   </div>
@@ -31,28 +32,25 @@ export default {
       playlist: "",
       song: "",
       artist: "",
-      image: ""
+      image: "",
+      game: "Start!",
+      lyrics: ""
     };
   },
   methods: {
-    // Method GET's playlist
-    loadPlaylists() {
-      this.$http.get("");
-    },
-    //
     genreChoosen(genreSelected) {
       this.isGenreChoosen = genreSelected
       console.log()
     },
-    authorizeSpotify() {
+    getSongs() {
       if (this.isGenreChoosen === "Rock") {
-        this.playlist = "http://localhost:9020/rock"
+        this.playlist = "http://localhost:9021/rock"
       } else if (this.isGenreChoosen === "Christmas") {
-        this.playlist = "http://localhost:9020/christmas"
+        this.playlist = "http://localhost:9021/christmas"
       } else if (this.isGenreChoosen === "Pop") {
-        this.playlist = "http://localhost:9020/pop"
+        this.playlist = "http://localhost:9021/pop"
       } else if (this.isGenreChoosen === "Rap") {
-        this.playlist = "http://localhost:9020/rap"
+        this.playlist = "http://localhost:9021/rap"
       }
       axios.get(this.playlist)
         .then(response => {
@@ -61,21 +59,21 @@ export default {
             resultArray.push(response[key]);
           }
           this.playlist = resultArray;
-          console.log(resultArray)
           this.song = this.playlist[0].Song.song
           this.artist = this.playlist[0].Song.artist
           this.image = this.playlist[0].Song.image //test
+          this.lyrics = this.playlist[0].Song.lyrics
         })
 
     },
-    randomNumber() {
-      let randomNumber = Math.floor(Math.random() * 101)
-      return randomNumber
+    setSong() {
+      this.getSongs()
+      this.game = "What lyrics are missing?"
+      setInterval(() => {
+        this.getSongs()
+      }, 5*1000)
     }
   },
-  created() {
-    this.authorizeSpotify();
-  }
 };
 </script>
 
