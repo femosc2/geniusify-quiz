@@ -61,12 +61,12 @@ export default {
           this.playlist = resultArray;
           this.song = this.playlist[0].Song.song
           this.artist = this.playlist[0].Song.artist
-          this.image = this.playlist[0].Song.image //test
+          this.image = this.playlist[0].Song.image
           this.lyrics = this.playlist[0].Song.lyrics
         })
 
     },
-    setSong() {
+    setSong() { //Auto update the song
       this.getSongs()
       this.game = "What lyrics are missing?"
       setInterval(() => {
