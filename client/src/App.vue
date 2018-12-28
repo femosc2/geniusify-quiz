@@ -74,7 +74,7 @@ export default {
       this.game = "What lyrics are missing?"
       setInterval(() => { //Updates every 5 second to see what song is currently selected
         this.getSongs()
-      }, 5*1000)
+      }, 2*1000)
     }
   },
 };
