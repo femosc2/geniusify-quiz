@@ -138,7 +138,8 @@ exports.getPop = (req, res, next) => {
             song: song,
             artist: artist,
             image: image,
-            lyrics: "The lyrics of the pop song"
+            lyrics: "The lyrics of the pop song",
+            words: ["Lyrics, Song, The"]
         }
     });
 };
@@ -151,7 +152,8 @@ exports.getRap = (req, res, next) => {
             song: rapSong,
             artist: rapArtist,
             image: rapImage,
-            lyrics: "The lyrics of the rap song"
+            lyrics: "The lyrics of the rap song",
+            words: ["Lyrics, Song, The"]
         }
     });
 };
@@ -164,7 +166,8 @@ exports.getRock = (req, res, next) => {
             song: rockSong,
             artist: rockArtist,
             image: rockImage,
-            lyrics: "The lyrics of the rock song"
+            lyrics: "The lyrics of the rock song",
+            words: ["Lyrics, Song, The"]
         }
     });
 };
@@ -177,7 +180,8 @@ exports.getChristmas = (req, res, next) => {
             song: christmasSong,
             artist: christmasArtist,
             image: christmasImage,
-            lyrics: "The lyrics of the christmas song"
+            lyrics: "The lyrics of the christmas song",
+            words: ["Lyrics, Song, The"]
         }
     });
 };
