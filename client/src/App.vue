@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <!-- <div v-if="isNameChoosen === null">
+    <div v-if="isNameChoosen === null">
       <input type="text" v-model="playerName">
-    </div> -->
+    </div>
     <div v-if="isGenreChoosen === null">
       <Genre @genreSelected="genreChoosen"/>
     </div>
@@ -17,17 +17,20 @@
 </template>
 
 <script>
-import Genre from "./components/Genre/Genres.vue"; 
+import Genre from "./components/Genre/Genres.vue";
+import Leaderboard from "./components/Leaderboard/Leaderboard.vue"; 
 const axios = require("axios")
 
 export default {
   name: "app",
   components: {
-    Genre
+    Genre,
+    Leaderboard
   },
   data: function() {
     return {
       playerName: null,
+      isNameChosen: null,
       isGenreChoosen: null,
       playlist: "",
       song: "",
@@ -46,13 +49,13 @@ export default {
     getSongs() {
       // Function for retrieving the song, artist, image and lyrics
       if (this.isGenreChoosen === "Rock") {
-        this.playlist = "http://localhost:9021/rock"
+        this.playlist = "http://localhost:9022/rock"
       } else if (this.isGenreChoosen === "Christmas") {
-        this.playlist = "http://localhost:9021/christmas"
+        this.playlist = "http://localhost:9022/christmas"
       } else if (this.isGenreChoosen === "Pop") {
-        this.playlist = "http://localhost:9021/pop"
+        this.playlist = "http://localhost:9022/pop"
       } else if (this.isGenreChoosen === "Rap") {
-        this.playlist = "http://localhost:9021/rap"
+        this.playlist = "http://localhost:9022/rap"
       }
       axios.get(this.playlist) //get from the chosen playlist
         .then(response => {
@@ -74,7 +77,7 @@ export default {
       this.game = "What lyrics are missing?"
       setInterval(() => { //Updates every 5 second to see what song is currently selected
         this.getSongs()
-      }, 2*1000)
+      }, 15*1000)
     }
   },
 };
