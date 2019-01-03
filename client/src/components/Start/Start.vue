@@ -1,0 +1,69 @@
+<template>
+  <div>
+      <p> {{ artist }}</p>
+      <p> {{ song }}</p>
+      <p> {{ lyrics }} </p>
+      <img :src="image" alt="">
+    </div>
+</template>
+
+<script>
+const axios = require("axios")
+
+export default {
+
+  data: function() {
+    return {
+      playlist: "",
+      song: "",
+      artist: "",
+      image: "",
+      lyrics: ""
+    };
+  },
+
+  props: ["isGenreChoosen"],
+
+  methods: {
+    getSongs() {
+      // Function for retrieving the song, artist, image and lyrics
+      if (this.isGenreChoosen === "Rock") {
+        this.playlist = "http://localhost:9022/rock"
+      } else if (this.isGenreChoosen === "Christmas") {
+        this.playlist = "http://localhost:9022/christmas"
+      } else if (this.isGenreChoosen === "Pop") {
+        this.playlist = "http://localhost:9022/pop"
+      } else if (this.isGenreChoosen === "Rap") {
+        this.playlist = "http://localhost:9022/rap"
+      }
+      axios.get(this.playlist) //get from the chosen playlist
+        .then(response => {
+          const resultArray = [];
+          for (let key in response) { //organizes the json file
+            resultArray.push(response[key]);
+          }
+          this.playlist = resultArray;
+          this.song = this.playlist[0].Song.song //Playlist[0] = Object which stores information about song
+          this.artist = this.playlist[0].Song.artist
+          this.image = this.playlist[0].Song.image
+          this.lyrics = this.playlist[0].Song.lyrics
+        })
+    },
+    setSong() {
+      //function to automaticlly update the current songs to the front-end
+      this.getSongs() // Chooses a song as soon as it is clicked
+      setInterval(() => { //Updates every 5 second to see what song is currently selected
+        this.getSongs()
+      }, 15*1000)
+    }
+  },
+
+  created() {
+      this.setSong()
+  }
+};
+</script>
+
+<style>
+
+</style>
