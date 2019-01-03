@@ -1,8 +1,8 @@
 <template>
     <div>
         <h4>Leaderboard</h4>
-        <ul>
-            <li v-for="(player, index) in players" :key="index"></li>
+        <ul v-if="isLeaderboardShowing">
+            <li v-for="(value, key) in players" :key="key">{{ key }} : {{ value }}</li>
         </ul>
     </div>
 </template>
@@ -19,23 +19,27 @@ export default {
     methods: {
         getPlayers() {
       axios
-        .get("https://geniusify-quiz.firebaseio.com")
+        .get("https://geniusify-quiz.firebaseio.com/Players.json")
         .then(response => {
-          return response.json();
+          console.log(response.data)
+          this.players = response.data
         })
-        .then(data => {
-          const resultArray = [];
-          for (let key in data) {
-            resultArray.push(data[key]);
-          }
-          this.players = resultArray
-          console.log(this.players)
-        });
     } 
-        }
+        },
+        created() {
+            this.getPlayers()
+        },
+        props: ["isLeaderboardShowing"]
     }
 </script>
 
-<style>
-
+<style scoped>
+    div {
+        background-color: white;
+        color: black;
+        position: fixed;
+        left: 50%;
+        width: 50%;
+        transform: translate(-50%, 0);
+    }
 </style>

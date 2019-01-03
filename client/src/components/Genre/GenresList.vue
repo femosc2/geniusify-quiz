@@ -26,7 +26,7 @@ export default {
 };
 
 </script>
-<style>
+<style scoped>
   .genreButton {
     color: #0b8793;
     font-size: 2rem;
