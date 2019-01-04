@@ -1,9 +1,12 @@
 <template>
   <div id="app">
-    <div>
+    <div v-if="!isNameChoosen">
+      <choose-name @nameChoosen="setName" />
+    </div>
+    <div v-if="isNameChoosen">
       <leaderboard />
     </div>
-    <div v-if="isGenreChoosen === null">
+    <div v-if="isGenreChoosen === null && isNameChoosen">
       <Genre @genreSelected="genreChoosen"/>
     </div>
     <div v-else>
@@ -17,19 +20,23 @@
 import Genre from "./components/Genre/Genres.vue";
 import Leaderboard from "./components/Leaderboard/Leaderboard.vue";
 import Start from "./components/Start/Start.vue";
+import ChooseName from "./components/ChooseName/ChooseName.vue"
 
 export default {
   name: "app",
   components: {
     Genre,
     Leaderboard,
-    Start
+    Start,
+    ChooseName
+
   },
   data: function() {
     return {
       playerName: null,
-      isNameChosen: null,
+      isNameChoosen: false,
       isGenreChoosen: null,
+      name: null
 
     };
   },
@@ -38,6 +45,10 @@ export default {
       // Function which recieves the current Genre
       this.isGenreChoosen = genreSelected
     },
+    setName(name) {
+      this.name = name
+      this.isNameChoosen = true
+    }
   },
 };
 </script>
