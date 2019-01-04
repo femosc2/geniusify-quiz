@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <div>
-      <leaderboard-button @leaderboardToggledOff="toggleLeaderboard(false)" @leaderboardToggledOn="toggleLeaderboard(true)" />
-      <leaderboard v-if="isLeaderboardShowing" :isLeaderboardShowing="isLeaderboardShowing" />
+      <leaderboard />
     </div>
     <div v-if="isGenreChoosen === null">
       <Genre @genreSelected="genreChoosen"/>
@@ -17,7 +16,6 @@
 
 import Genre from "./components/Genre/Genres.vue";
 import Leaderboard from "./components/Leaderboard/Leaderboard.vue";
-import LeaderboardButton from "./components/Leaderboard/LeaderboardButton.vue"
 import Start from "./components/Start/Start.vue";
 
 export default {
@@ -25,7 +23,6 @@ export default {
   components: {
     Genre,
     Leaderboard,
-    LeaderboardButton,
     Start
   },
   data: function() {
@@ -33,7 +30,7 @@ export default {
       playerName: null,
       isNameChosen: null,
       isGenreChoosen: null,
-      isLeaderboardShowing: false
+
     };
   },
   methods: {
@@ -41,9 +38,6 @@ export default {
       // Function which recieves the current Genre
       this.isGenreChoosen = genreSelected
     },
-    toggleLeaderboard(toggleStatus) {
-      this.isLeaderboardShowing = toggleStatus
-    }
   },
 };
 </script>
