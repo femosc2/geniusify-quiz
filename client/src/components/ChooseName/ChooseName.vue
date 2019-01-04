@@ -11,12 +11,10 @@ export default {
     data: function() {
         return {
             name: null,
-            isNameChoosen: false
         }
     },
     methods: {
         submit() {
-            this.isNameChoosen = true
             this.$emit("nameChoosen", this.name, this.isNameChoosen)
         }
     }

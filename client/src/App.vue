@@ -37,7 +37,6 @@ export default {
       isNameChoosen: false,
       isGenreChoosen: null,
       name: null
-
     };
   },
   methods: {
