@@ -15,7 +15,7 @@ export default {
     },
     methods: {
         submit() {
-            this.$emit("nameChoosen", this.name, this.isNameChoosen)
+            this.$emit("nameChoosen", this.name)
         }
     }
 }

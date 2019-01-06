@@ -10,7 +10,7 @@
       <Genre @genreSelected="genreChoosen"/>
     </div>
     <div v-else>
-        <Start :isGenreChoosen="isGenreChoosen"/>
+        <Game :isGenreChoosen="isGenreChoosen"/>
     </div>
   </div>
 </template>
@@ -19,7 +19,7 @@
 
 import Genre from "./components/Genre/Genres.vue";
 import Leaderboard from "./components/Leaderboard/Leaderboard.vue";
-import Start from "./components/Start/Start.vue";
+import Game from "./components/Game/Game.vue";
 import ChooseName from "./components/ChooseName/ChooseName.vue"
 
 export default {
@@ -27,7 +27,7 @@ export default {
   components: {
     Genre,
     Leaderboard,
-    Start,
+    Game,
     ChooseName
 
   },
