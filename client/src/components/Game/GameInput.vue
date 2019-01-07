@@ -2,6 +2,7 @@
     <div>
       <input type="text" v-model="userGuess">
       <button @click="checkWord">Check</button>
+      <p> {{ score }} </p>
     </div>
 </template>
 
@@ -22,15 +23,28 @@ export default {
             for (var i = 0; i < this.words.length; i++) {
                 if (this.userGuess === this.words[i]) {
                     this.score++
-                    console.log("Guess is correct")
+                    console.log("Guess is correct");
                 } else {
-                    console.log("Guess is incorrect")
+                    console.log("Guess is incorrect");
                 }
             }
+        },
+
+        game() {
+            setInterval( () => {
+                this.score = 0;
+                // Firebase post
+                location.reload()
+
+            }, 150 * 1000) 
         }
     },
 
-    props: ["isGenreChoosen", "words"]
+    props: ["isGenreChoosen", "words"],
+
+    created() {
+        this.game()
+    }
 }
 </script>
 
