@@ -8,8 +8,13 @@
       :image="image"
       :lyrics="lyrics"
     />
+<<<<<<< HEAD
     <button @click="translateLyrics">Translate motherfucker</button>
     <game-input v-if="isGenreChoosen" :words="words"/>
+=======
+    <button @click="translateLyrics">Btn</button>
+    <game-input v-if="isGenreChoosen" :words="words" :name="name"/>
+>>>>>>> 05df51553b765555dff856819c2b81c596eeb0af
     
   </div>
 </template>
@@ -28,7 +33,7 @@ export default {
       artist: "",
       image: "",
       lyrics: "",
-      words: "",
+      words: ["test1", "test2", "test3"],
       yandexApiKey: "trnsl.1.1.20190107T101715Z.2c54edf18f30a990.dca4f7a48c0246f5640d869c171eb040cae4e585"
 
     };
@@ -63,6 +68,7 @@ export default {
           this.image = this.playlist[0].Song.image;
           // this.lyrics = this.playlist[0].Song.lyrics
           this.lyrics = "This is some lyrics";
+          this.words = this.playlist[0].Song.words;
         });
     },
     setSong() {
@@ -101,7 +107,7 @@ export default {
         });
     }
   },
-  props: ["isGenreChoosen"],
+  props: ["isGenreChoosen", "name"],
   created() {
     this.setSong();
   }

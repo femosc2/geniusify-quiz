@@ -10,7 +10,7 @@
       <Genre @genreSelected="genreChoosen"/>
     </div>
     <div v-else>
-        <Game :isGenreChoosen="isGenreChoosen"/>
+        <Game :isGenreChoosen="isGenreChoosen" :name="name"/>
     </div>
   </div>
 </template>
