@@ -31,6 +31,7 @@ export default {
 
 <style scoped>
 button {
+  display: block;
   float: right;
   z-index: 500;
   color: #0b8793;
