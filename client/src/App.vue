@@ -61,4 +61,17 @@ export default {
   margin-top: 60px;
   background: linear-gradient(to right, #360033,  #0b8793);
 }
+@keyframes blur {
+    0% {
+        filter: blur(0px)
+    }
+    100% {
+        filter:blur(15px)
+    }
+}
+* {
+    animation: blur 0.4s 1 reverse;
+    transition: 1s;
+    animation-timing-function: cubic-bezier(.66,-0.16,.97,.36)
+}
 </style>

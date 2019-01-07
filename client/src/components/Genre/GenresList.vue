@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- When click on genreButton, run function chosenGenre which loops over genres. Displays name of each Genres-->
-    <a class="genreButton" @click="chosenGenre(genre.genreName)" v-for="genre in genres" :key="genre.id">{{ genre.genreName }}</a>
+    <a @click="chosenGenre(genre.genreName)" v-for="genre in genres" :key="genre.id">{{ genre.genreName }}</a>
   </div>
 </template>
 
@@ -27,7 +27,7 @@ export default {
 
 </script>
 <style scoped>
-  .genreButton {
+  a {
     color: #0b8793;
     font-size: 2rem;
     padding: 5rem;
