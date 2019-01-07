@@ -22,9 +22,9 @@ export default {
             for (var i = 0; i < this.words.length; i++) {
                 if (this.userGuess === this.words[i]) {
                     this.score++
-                    console.log("Guess is correct ∏")
+                    console.log("Guess is correct")
                 } else {
-                    console.log("Guess is incorrect ∏")
+                    console.log("Guess is incorrect")
                 }
             }
         }
