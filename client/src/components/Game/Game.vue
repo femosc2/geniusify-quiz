@@ -9,7 +9,7 @@
       :lyrics="lyrics"
     />
     <button @click="translateLyrics">Btn</button>
-    <game-input v-if="isGenreChoosen" :words="words"/>
+    <game-input v-if="isGenreChoosen" :words="words" :name="name"/>
     
   </div>
 </template>
@@ -28,7 +28,7 @@ export default {
       artist: "",
       image: "",
       lyrics: "",
-      words: "",
+      words: ["test1", "test2", "test3"],
       yandexApiKey: "trnsl.1.1.20190107T101715Z.2c54edf18f30a990.dca4f7a48c0246f5640d869c171eb040cae4e585"
 
     };
@@ -97,7 +97,7 @@ export default {
         });
     }
   },
-  props: ["isGenreChoosen"],
+  props: ["isGenreChoosen", "name"],
   created() {
     this.setSong();
   }
