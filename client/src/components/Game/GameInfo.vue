@@ -4,11 +4,15 @@
       <p> {{ song }}</p>
       <p> {{ lyrics }} </p>
       <img :src="image" alt="">
+      <button @click="translateLyrics">Btn</button>
     </div>
 </template>
 
 <script>
 const axios = require("axios")
+
+let yandexApiKey = "trnsl.1.1.20190107T101715Z.2c54edf18f30a990.dca4f7a48c0246f5640d869c171eb040cae4e585"
+
 
 export default {
 
@@ -18,7 +22,8 @@ export default {
       song: "",
       artist: "",
       image: "",
-      lyrics: ""
+      lyrics: "",
+      yandexApiKey: "trnsl.1.1.20190107T101715Z.2c54edf18f30a990.dca4f7a48c0246f5640d869c171eb040cae4e585"
     };
   },
 
@@ -46,7 +51,8 @@ export default {
           this.song = this.playlist[0].Song.song //Playlist[0] = Object which stores information about song
           this.artist = this.playlist[0].Song.artist
           this.image = this.playlist[0].Song.image
-          this.lyrics = this.playlist[0].Song.lyrics
+          // this.lyrics = this.playlist[0].Song.lyrics
+          this.lyrics = "This is some lyrics"
         })
     },
     setSong() {
@@ -55,7 +61,23 @@ export default {
       setInterval(() => { //Updates every 5 second to see what song is currently selected
         this.getSongs()
       }, 15*1000)
-    }
+    },
+    translateLyrics() {
+  axios.get("https://cors-anywhere.herokuapp.com/https://translate.yandex.net/api/v1.5/tr.json/translate?lang=en-sv&text=" + this.lyrics + "&key=" + this.yandexApiKey + "&format=plain"
+  )
+    .then((response) => {
+      const resultArray = [];
+      for (let key in response) { // Organizes the JSON file.
+          resultArray.push(response[key]);
+      }
+      let bajs = resultArray[5].response.split("").splice(0, 25)
+      console.log((resultArray[5].response.split("")) - (bajs))
+      
+      }) 
+      .catch((error) => {
+        console.log(error);
+      })
+}
   },
 
   created() {
