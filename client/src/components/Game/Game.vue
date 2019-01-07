@@ -8,7 +8,9 @@
       :image="image"
       :lyrics="lyrics"
     />
+    <button @click="translateLyrics">Btn</button>
     <game-input v-if="isGenreChoosen" :words="words"/>
+    
   </div>
 </template>
 
@@ -87,7 +89,7 @@ export default {
             resultArray.push(response[key]);
           }
           let bajs = resultArray[5].response.split("").splice(0, 25);
-          console.log(resultArray[5].response.split("") - bajs);
+          console.log(resultArray[5].response.split(""));
         })
         .catch(error => {
           console.log(error);

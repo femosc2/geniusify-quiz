@@ -4,7 +4,6 @@
       <p> {{ song }} </p>
       <p> {{ lyrics }} </p>
       <img :src="image" alt="">
-      <button @click="translateLyrics">Btn</button>
     </div>
 </template>
 
