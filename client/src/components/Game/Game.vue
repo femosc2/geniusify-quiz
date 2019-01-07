@@ -8,7 +8,7 @@
       :image="image"
       :lyrics="lyrics"
     />
-    <button @click="translateLyrics">Btn</button>
+    <button @click="translateLyrics">Translate motherfucker</button>
     <game-input v-if="isGenreChoosen" :words="words"/>
     
   </div>
@@ -88,8 +88,13 @@ export default {
             // Organizes the JSON file.
             resultArray.push(response[key]);
           }
-          let bajs = resultArray[5].response.split("").splice(0, 25);
-          console.log(resultArray[5].response.split(""));
+         // let bajs = resultArray[5].response.split("").splice(0, 36);
+          let array = resultArray[5].response.split("")
+          let kiss = array.splice(0, 36);
+          let hej = array.join();
+          let paj = hej.substring(0, hej.length - 5);
+          
+          console.log(paj.replace(/,/g, ''))
         })
         .catch(error => {
           console.log(error);
