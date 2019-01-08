@@ -13,7 +13,7 @@ div {
     height: 100px;
     background-color: black;
     width: 0%;
-    animation: progressBar 150s infinite linear;
+    animation: progressBar 150s 1 linear;
   }
   @keyframes progressBar {
     0% {
