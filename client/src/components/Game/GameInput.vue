@@ -11,6 +11,7 @@
 
 <script>
 const axios = require("axios");
+const _ = require("lodash")
 
 export default {
   data: function() {
@@ -55,9 +56,7 @@ export default {
       }, 10 * 1000);
     }
   },
-
   props: ["isGenreChoosen", "words", "name"],
-
   created() {
     this.game();
   }

@@ -3,7 +3,7 @@
         <ul v-if="isLeaderboardShowing">
             <h4>Leaderboard</h4>
             <transition-group name="fade">
-                <li v-for="(player,index) in players" :key="index+1">{{ player.name }} {{ player.score }}</li>
+                <li v-for="(player,index) in orderedPlayers" :key="index+1">{{ player.name }} {{ player.score }}</li>
                 </transition-group>
         </ul>
     </div>
@@ -16,6 +16,7 @@ export default {
   data: function() {
     return {
       players: "",
+      leaderboard: "",
     };
   },
   methods: {
@@ -25,14 +26,19 @@ export default {
         .then(response => {
           console.log(response.data);
           this.players = response.data;
-          this.leaderboard = _.sortBy(this.players, "key")
         });
     },
   },
   created() {
     this.getPlayers();
   },
-  props: ["isLeaderboardShowing"]
+  props: ["isLeaderboardShowing"],
+  computed: {
+  orderedPlayers: function () {
+    this.leaderboard = _.orderBy(this.players, 'score')
+    return this.leaderboard.reverse()
+  }
+}
 }
 </script>
 
