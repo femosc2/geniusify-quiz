@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- When click on genreButton, run function chosenGenre which loops over genres. Displays name of each Genres-->
-    <a @click="chosenGenre(genre.genreName)" v-for="genre in genres" :key="genre.id">{{ genre.genreName }}</a>
+    <div @click="chosenGenre(genre.genreName)" v-for="genre in genres" :key="genre.id" class="genreList" v-bind:style="{ 'background-image': 'url(' + genre.image + ') ' }">{{ genre.genreName }}</div>
   </div>
 </template>
 
@@ -27,8 +27,15 @@ export default {
 
 </script>
 <style scoped>
-  a {
-    height: 100%;
+  .genreList {
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center; 
+    cursor: pointer;
+    width: 280px;
+    text-align: center;
+    height: 47rem;
     border: 1px #ED4C67;
     color: #ED4C67;
     font-size: 2rem;
