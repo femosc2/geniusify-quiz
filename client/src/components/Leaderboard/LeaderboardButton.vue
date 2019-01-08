@@ -32,8 +32,9 @@ export default {
 <style scoped>
 button {
   cursor: pointer;
-  position: absolute;
-  left: 0;
+  position: fixed;
+  top: 2%;
+  right: 2%;
   z-index: 500;
   color: #ED4C67;
   background: white;
