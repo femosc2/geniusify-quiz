@@ -8,7 +8,7 @@
       :image="image"
       :lyrics="lyrics"
     />
-    <button @click="translateLyrics">Translate motherfucker</button>
+    <button @click="translateLyrics">Translate to Swedish</button>
     <game-input v-if="isGenreChoosen" :words="words" :name="name"/>
     <game-progress v-if="isGenreChoosen" />
   </div>
@@ -91,15 +91,13 @@ export default {
             // Organizes the JSON file.
             resultArray.push(response[key]);
           }
-         //let bajs = resultArray[5].response.split("").splice(0, 36);
           let array = resultArray[5].response.split("");
-          
-          
           let splittedArray = array.splice(0, 36);
           let forgedArray = array.join();
-          let fixedArray = forgedArray.substring(0, forgedArray.length - 5);
+          let fixedArray = forgedArray.substring(0, forgedArray.length - 5).replace(/,/g, '');
+          this.lyrics = fixedArray
           
-          console.log(fixedArray.replace(/,/g, ''))        //The translated lyrics
+          //console.log(fixedArray.replace(/,/g, ''))        //The translated lyrics
 
         })
         .catch(error => {
