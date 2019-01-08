@@ -3,7 +3,7 @@
         <ul v-if="isLeaderboardShowing">
             <h4>Leaderboard</h4>
             <transition-group name="fade">
-                <li v-for="(key, value) in players" :key="key+1">{{ value }} : {{ key }}</li>
+                <li v-for="(player,index) in players" :key="index+1">{{ player.name }} {{ player.score }}</li>
                 </transition-group>
         </ul>
     </div>

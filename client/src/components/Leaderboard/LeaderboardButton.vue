@@ -26,16 +26,16 @@ export default {
       }
     }
   }
-};
+}; 
 </script>
 
 <style scoped>
 button {
+  cursor: pointer;
   position: absolute;
   left: 0;
   z-index: 500;
-  color: #0b8793;
-  font-size: 2rem;
+  color: #ED4C67;
   background: white;
   margin: 1rem;
   border-radius: 1rem;

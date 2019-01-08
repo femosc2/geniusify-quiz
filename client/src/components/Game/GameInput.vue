@@ -1,8 +1,11 @@
 <template>
-    <div>
+    <div v-if="!gameOver">
       <input type="text" v-model="userGuess">
       <button @click="checkWord">Check</button>
       <p> {{ score }} </p>
+    </div>
+    <div v-else>
+      GAME OVER!
     </div>
 </template>
 
@@ -13,7 +16,8 @@ export default {
   data: function() {
     return {
       userGuess: null,
-      score: 0
+      score: 0,
+      gameOver: false
       // Numb of avalible chances to guess (3)?,
     };
   },
@@ -32,16 +36,25 @@ export default {
 
     game() {
       setInterval(() => {
+        let score = {
+          name: this.name,
+          score: this.score
+        }
         axios
-          .put(
-            "https://geniusify-quiz.firebaseio.com/Players/" + this.name + ".json"
-          , this.score)
+          .post(
+            "https://geniusify-quiz.firebaseio.com/Players.json"
+          , score)
           .then(response => {
             console.log(response.data);
           });
         this.score = 0;
+        this.gameOver = true
         setTimeout(function() {
+<<<<<<< HEAD
            location.reload();
+=======
+          location.reload()
+>>>>>>> f840f544792609fb2bc42bc7af9204f6a073b263
         }, 2*1000)
       }, 10 * 1000);
     }
