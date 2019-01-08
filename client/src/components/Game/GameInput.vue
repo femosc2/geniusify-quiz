@@ -56,7 +56,7 @@ export default {
           });
         this.score = 0;
         this.gameOver = true
-      }, 150 * 1000);
+      }, 10 * 1000);
     },
     newGame() {
       location.reload()
