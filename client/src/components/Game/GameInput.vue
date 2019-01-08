@@ -2,7 +2,7 @@
     <div v-if="!gameOver">
       <input type="text" v-model="userGuess" v-on:keydown.enter="checkWord">
       <button class="checkWordBtn" @click="checkWord">Guess</button>
-      <p> Score: {{ score }} </p>
+      <h2> Score: {{ score }} </h2>
       <h2>{{ this.song }}</h2>
       <div class="progressBar" />
     </div>
@@ -30,13 +30,11 @@ export default {
     checkWord() {
       for (var i = 0; i < this.words.length; i++) {
         if (this.userGuess === this.words[i]) {
-          console.log(this.words)
           this.score++;
           this.words.splice(i, 1)
-          console.log("Guess is correct");
-          console.log(this.words)
+          this.userGuess = ""
         } else {
-          console.log("Guess is incorrect");
+          this.userGuess = ""
         }
       }
     },
@@ -96,5 +94,8 @@ export default {
     100% {
       width: 100%;
     }
+  }
+  h2 {
+   color: #ED4C67;
   }
 </style>
