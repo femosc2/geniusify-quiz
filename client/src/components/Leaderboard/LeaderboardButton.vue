@@ -2,7 +2,7 @@
     <div>
         <div class="leaderboardBtn" @click="toggleLeaderboard(), show=!show">
             <i v-if="show" class="icon fas fa-list-ol"></i>
-            <i v-else="" class="icon fas fa-times"></i>
+            <i v-else class="icon fas fa-times"></i>
         </div>
     </div>
 </template>

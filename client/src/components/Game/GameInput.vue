@@ -81,9 +81,6 @@ export default {
     width: 0%;
     animation: progressBar 15s infinite linear;
   }
-  .checkWordBtn {
-
-  }
   .newGameBtn {
     font-size: 1.7em;
   }
