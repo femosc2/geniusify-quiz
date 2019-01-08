@@ -52,7 +52,11 @@ export default {
   -ms-transform: scale(1.1);
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
-  
+
+  background-color: rgba(237, 76, 103, 0.4);
+  background-blend-mode: screen;
+  color: white;
+
    }
 
 @keyframes fadeIn {

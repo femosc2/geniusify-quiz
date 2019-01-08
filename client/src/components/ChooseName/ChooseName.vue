@@ -30,18 +30,19 @@ export default {
 
 h1 {
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 3.4rem;
   font-weight: 400;
   color: #ED4C67;
 }
 
 h2 {
     color: #ED4C67;
+    font-weight: 200;
 }
 
 input {
   border: none;
-  background-color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(255, 255, 255, 0.4);
   color: #ED4C67;
   width: 50%;
   height: 100px;
@@ -51,11 +52,13 @@ input {
   -moz-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
 }
+
+
 button {
   cursor: pointer;
-  color: #ED4C67;
+  color: white;
   font-size: 2rem;
-  background: white;
+  background: #ED4C67;
   padding: 1.1rem;
   margin: 1rem;
   border-radius: 1rem;
@@ -73,8 +76,8 @@ button:active {
 }
 
 button:hover {
-    background-color: black;
-    color:#ED4C67;
+    background-color: #606466;
+    color: #ED4C67;
  }
 
  .cd-icon {
