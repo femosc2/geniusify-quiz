@@ -6,9 +6,8 @@
       <div class="progressBar" />
     </div>
     <div v-else>
-      <transition>
       <h1>GAME OVER!</h1>
-      </transition>
+      <button @click="newGame">NEW GAME</button>
     </div>
 </template>
 
@@ -56,10 +55,10 @@ export default {
           });
         this.score = 0;
         this.gameOver = true
-        setTimeout(function() {
-           location.reload();
-        }, 2 * 1000)
-      }, 150 * 1000);
+      }, 10 * 1000);
+    },
+    newGame() {
+      location.reload()
     }
   },
   props: ["isGenreChoosen", "words", "name"],
