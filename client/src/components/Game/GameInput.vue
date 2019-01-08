@@ -1,6 +1,6 @@
 <template>
     <div v-if="!gameOver">
-      <input type="text" v-model="userGuess">
+      <input type="text" v-model="userGuess" v-on:keydown.enter="checkWord">
       <button @click="checkWord">Check</button>
       <p> {{ score }} </p>
       <div class="progressBar" />
