@@ -52,7 +52,7 @@ export default {
         this.gameOver = true
         setTimeout(function() {
            location.reload();
-        }, 2*1000)
+        }, 2 * 1000)
       }, 10 * 1000);
     }
   },
