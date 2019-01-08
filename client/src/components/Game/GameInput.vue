@@ -30,8 +30,11 @@ export default {
     checkWord() {
       for (var i = 0; i < this.words.length; i++) {
         if (this.userGuess === this.words[i]) {
+          console.log(this.words)
           this.score++;
+          this.words.splice(i, 1)
           console.log("Guess is correct");
+          console.log(this.words)
         } else {
           console.log("Guess is incorrect");
         }

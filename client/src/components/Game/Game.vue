@@ -65,7 +65,7 @@ export default {
           this.image = this.playlist[0].Song.image;
           // this.lyrics = this.playlist[0].Song.lyrics
           this.lyrics = "This is some lyrics";
-          this.words = this.playlist[0].Song.words;
+          this.words = ["test1", "test2", "test3"]
         });
     },
     setSong() {
