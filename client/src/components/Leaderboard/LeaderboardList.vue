@@ -37,7 +37,8 @@ export default {
   computed: {
   orderedPlayers: function () {
     this.leaderboard = _.orderBy(this.players, 'score')
-    return this.leaderboard.reverse()
+    let reverseLeaderboard = this.leaderboard.reverse()
+    return reverseLeaderboard.slice(0,10)
   }
 }
 }
@@ -58,7 +59,7 @@ div {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 25s, height 10s, opacity 0.5s;
+  transition: all 10s, height 10s, opacity 0.5s;
   max-height: 5000px;
 }
 
