@@ -63,8 +63,7 @@ export default {
           this.song = this.playlist[0].Song.song; //Playlist[0] = Object which stores information about song
           this.artist = this.playlist[0].Song.artist;
           this.image = this.playlist[0].Song.image;
-          // this.lyrics = this.playlist[0].Song.lyrics
-          this.lyrics = "This is some lyrics";
+          this.lyrics = this.playlist[0].Song.lyrics
           this.words = ["test1", "test2", "test3"]
         });
     },
