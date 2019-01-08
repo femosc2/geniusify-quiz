@@ -56,7 +56,6 @@ export default {
           });
         this.score = 0;
         this.gameOver = true
-        this.$emit("gameOver", this.gameOver)
         setTimeout(function() {
            location.reload();
         }, 2 * 1000)

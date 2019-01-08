@@ -10,7 +10,7 @@
     />
     <button @click="translateLyrics">Translate to Swedish</button>
     <game-input v-if="isGenreChoosen" :words="words" :name="name"/>
-    <game-progress v-if="isGenreChoosen && !gameOver" @gameOver="isGameOver(true)" />
+    <game-progress v-if="isGenreChoosen"/>
   </div>
 </template>
 
@@ -31,7 +31,6 @@ export default {
       lyrics: "",
       words: ["test1", "test2", "test3"],
       yandexApiKey: "trnsl.1.1.20190107T101715Z.2c54edf18f30a990.dca4f7a48c0246f5640d869c171eb040cae4e585",
-      isGameOver: false
     };
   },
   components: {
@@ -104,9 +103,6 @@ export default {
           console.log(error);
         });
     },
-    isGameOver(boolean) {
-      this.isGameOver = boolean
-    }
   },
   props: ["isGenreChoosen", "name"],
   created() {
