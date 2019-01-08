@@ -1,6 +1,6 @@
 <template>
     <div>
-      <leaderboard-button @leaderboardToggledOff="toggleLeaderboard(false)" @leaderboardToggledOn="toggleLeaderboard(true)" />
+      <leaderboard-button class="leaderboardBtn" @leaderboardToggledOff="toggleLeaderboard(false)" @leaderboardToggledOn="toggleLeaderboard(true)" />
       <leaderboard-list v-if="isLeaderboardShowing" :isLeaderboardShowing="isLeaderboardShowing" />
       <leaderboard-exit @leaderboardToggledOff="toggleLeaderboard(false)" @leaderboardToggledOn="toggleLeaderboard(true)" v-if="isLeaderboardShowing" :isLeaderboardShowing="isLeaderboardShowing"/>
     </div>
@@ -29,7 +29,3 @@ export default {
   }
 };
 </script>
-
-<style>
-
-</style>

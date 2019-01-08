@@ -8,7 +8,7 @@
       :image="image"
       :lyrics="lyrics"
     />
-    <button @click="translateLyrics">Translate to Swedish</button>
+    <button class="translateBtn" v-if="isGenreChoosen" @click="translateLyrics">Translate to Swedish</button>
     <game-input v-if="isGenreChoosen" :words="words" :name="name"/>
     <game-progress v-if="isGenreChoosen"/>
   </div>
@@ -39,6 +39,7 @@ export default {
     GameProgress
   },
   methods: {
+      
     getSongs() {
       // Function for retrieving the song, artist, image and lyrics
       if (this.isGenreChoosen === "Rock") {
@@ -109,3 +110,11 @@ export default {
   }
 };
 </script>
+
+<style>
+.translateBtn {
+    font-size: 0.8em;
+    padding: 0.8em;
+}
+
+</style>

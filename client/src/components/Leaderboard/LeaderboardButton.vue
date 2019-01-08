@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="toggleLeaderboard">
+        <button class="leaderboardBtn" @click="toggleLeaderboard">
             Leaderboard
         </button>
     </div>
@@ -30,7 +30,7 @@ export default {
 </script>
 
 <style scoped>
-button {
+.leaderboardBtn {
   cursor: pointer;
   position: fixed;
   top: 2%;

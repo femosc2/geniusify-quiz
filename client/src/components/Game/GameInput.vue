@@ -1,13 +1,13 @@
 <template>
     <div v-if="!gameOver">
       <input type="text" v-model="userGuess" v-on:keydown.enter="checkWord">
-      <button @click="checkWord">Guess</button>
+      <button class="checkWordBtn" @click="checkWord">Guess</button>
       <p> Score: {{ score }} </p>
       <div class="progressBar" />
     </div>
     <div v-else>
       <h1>GAME OVER!</h1>
-      <button @click="newGame">NEW GAME</button>
+      <button class="newGameBtn" @click="newGame">NEW GAME</button>
     </div>
 </template>
 
@@ -80,6 +80,12 @@ export default {
     background-color: black;
     width: 0%;
     animation: progressBar 15s infinite linear;
+  }
+  .checkWordBtn {
+
+  }
+  .newGameBtn {
+    font-size: 1.7em;
   }
   @keyframes progressBar {
     0% {
