@@ -34,14 +34,17 @@ export default {
 <style scoped>
 
 .icon {
-  font-size: 2rem;
+  height: 3rem;
+  width: 3rem;
+  font-size: 3rem;
+  position: relative;
 }
 
 .leaderboardBtn {
-  padding: 1.8rem;
+  padding: 1.3rem;
   cursor: pointer;
   position: fixed;
-  top: 2%;
+  top: 4%;
   right: 2%;
   z-index: 500;
   color: #ED4C67;
