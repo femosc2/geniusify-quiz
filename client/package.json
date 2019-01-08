@@ -15,8 +15,7 @@
     "spotify-web-api-node": "^4.0.0",
     "vue": "^2.5.17",
     "vue-resource": "^1.5.1",
-    "vue-spotify": "^1.0.2",
-    "vue2-filters": "^0.4.1"
+    "vue-spotify": "^1.0.2"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",

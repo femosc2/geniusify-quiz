@@ -51,11 +51,7 @@ export default {
         this.score = 0;
         this.gameOver = true
         setTimeout(function() {
-<<<<<<< HEAD
            location.reload();
-=======
-          location.reload()
->>>>>>> f840f544792609fb2bc42bc7af9204f6a073b263
         }, 2*1000)
       }, 10 * 1000);
     }
