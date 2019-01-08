@@ -9,7 +9,7 @@
       :lyrics="lyrics"
     />
     <button @click="translateLyrics">Translate to Swedish</button>
-    <game-input v-if="isGenreChoosen" :words="words" :name="name"/>
+    <game-input v-if="isGenreChoosen" :words="words" :name="name" :song="song"/>
     <game-progress v-if="isGenreChoosen" :song="song"/>
   </div>
 </template>
