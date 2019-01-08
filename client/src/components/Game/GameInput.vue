@@ -41,7 +41,7 @@ export default {
           });
         this.score = 0;
         setTimeout(function() {
-            location.reload();
+           location.reload();
         }, 2*1000)
       }, 10 * 1000);
     }
