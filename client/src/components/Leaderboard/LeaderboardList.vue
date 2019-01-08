@@ -3,7 +3,7 @@
         <ul v-if="isLeaderboardShowing">
             <h4>Leaderboard</h4>
             <transition-group name="fade">
-                <li v-for="(player,index) in orderedPlayers" :key="index+1">{{ player.name }} {{ player.score }}</li>
+                <li v-for="(player,index) in orderedPlayers" :key="index+1">{{ player.name }} : {{ player.score }}</li>
                 </transition-group>
         </ul>
     </div>
@@ -11,7 +11,8 @@
 
 <script>
 const axios = require("axios");
-// https://geniusify-quiz.firebaseio.com/
+const _ = require("lodash")
+
 export default {
   data: function() {
     return {

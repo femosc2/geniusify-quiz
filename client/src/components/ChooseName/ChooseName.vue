@@ -12,12 +12,12 @@
 export default {
   data: function() {
     return {
-      name: null
+      name: ""
     };
   },
   methods: {
     submit() {
-      if (name === null) {
+      if (name === "") {
         this.name = "Anonymous"
       }
       this.$emit("nameChoosen", this.name);
