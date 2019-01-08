@@ -8,13 +8,8 @@
       :image="image"
       :lyrics="lyrics"
     />
-<<<<<<< HEAD
     <button @click="translateLyrics">Translate motherfucker</button>
     <game-input v-if="isGenreChoosen" :words="words"/>
-=======
-    <button @click="translateLyrics">Btn</button>
-    <game-input v-if="isGenreChoosen" :words="words" :name="name"/>
->>>>>>> 05df51553b765555dff856819c2b81c596eeb0af
     
   </div>
 </template>
