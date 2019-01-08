@@ -28,7 +28,9 @@ export default {
 </script>
 <style scoped>
   a {
-    color: #0b8793;
+    height: 100%;
+    border: 1px #ED4C67;
+    color: #ED4C67;
     font-size: 2rem;
     padding: 5rem;
     background: white;

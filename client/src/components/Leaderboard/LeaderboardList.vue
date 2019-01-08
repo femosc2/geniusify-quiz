@@ -58,7 +58,7 @@ div {
 }
 .fade-enter-active,
 .fade-leave-active {
-  transition: all 10s, height 10s, opacity 0.5s;
+  transition: all 25s, height 10s, opacity 0.5s;
   max-height: 5000px;
 }
 

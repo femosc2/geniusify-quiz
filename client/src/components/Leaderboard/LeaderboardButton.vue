@@ -1,8 +1,9 @@
 <template>
     <div>
-        <button class="leaderboardBtn" @click="toggleLeaderboard">
-            Leaderboard
-        </button>
+        <div class="leaderboardBtn" @click="toggleLeaderboard(), show=!show">
+            <i v-if="show" class="icon fas fa-list-ol"></i>
+            <i v-else="" class="icon fas fa-times"></i>
+        </div>
     </div>
 </template>
 
@@ -10,6 +11,7 @@
 export default {
   data: function() {
     return {
+      show: true,
       leaderboardToggle: false
     };
   },
@@ -30,7 +32,13 @@ export default {
 </script>
 
 <style scoped>
+
+.icon {
+  font-size: 2rem;
+}
+
 .leaderboardBtn {
+  padding: 1.8rem;
   cursor: pointer;
   position: fixed;
   top: 2%;
@@ -39,9 +47,14 @@ export default {
   color: #ED4C67;
   background: white;
   margin: 1rem;
-  border-radius: 1rem;
+  border-radius: 50%;
   -webkit-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
 }
+
+.leaderboardBtn:hover {
+    background-color: #ED4C67;
+    color: white;
+ }
 </style>

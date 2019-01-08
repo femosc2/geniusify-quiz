@@ -1,6 +1,6 @@
 <template>
     <div>
-      <leaderboard-button class="leaderboardBtn" @leaderboardToggledOff="toggleLeaderboard(false)" @leaderboardToggledOn="toggleLeaderboard(true)" />
+      <leaderboard-button @leaderboardToggledOff="toggleLeaderboard(false)" @leaderboardToggledOn="toggleLeaderboard(true)" />
       <leaderboard-list v-if="isLeaderboardShowing" :isLeaderboardShowing="isLeaderboardShowing" />
       <leaderboard-exit @leaderboardToggledOff="toggleLeaderboard(false)" @leaderboardToggledOn="toggleLeaderboard(true)" v-if="isLeaderboardShowing" :isLeaderboardShowing="isLeaderboardShowing"/>
     </div>
@@ -9,7 +9,6 @@
 <script>
 import LeaderboardList from "./LeaderboardList.vue";
 import LeaderboardButton from "./LeaderboardButton.vue";
-import LeaderboardExit from "./LeaderboardExit.vue";
 
 export default {
   data: function() {
@@ -25,7 +24,6 @@ export default {
   components: {
       LeaderboardList,
       LeaderboardButton,
-      LeaderboardExit
   }
 };
 </script>
