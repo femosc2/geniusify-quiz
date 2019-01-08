@@ -8,7 +8,7 @@
       :image="image"
       :lyrics="lyrics"
     />
-    <button @click="translateLyrics">Translate motherfucker</button>
+    <button @click="translateLyrics">Translate to Swedish</button>
     <game-input v-if="isGenreChoosen" :words="words" :name="name"/>
     
   </div>
@@ -61,8 +61,8 @@ export default {
           this.song = this.playlist[0].Song.song; //Playlist[0] = Object which stores information about song
           this.artist = this.playlist[0].Song.artist;
           this.image = this.playlist[0].Song.image;
-          // this.lyrics = this.playlist[0].Song.lyrics
-          this.lyrics = "This is some lyrics";
+          this.lyrics = this.playlist[0].Song.lyrics;
+          //this.lyrics = "This is some lyrics";
           this.words = this.playlist[0].Song.words;
         });
     },
@@ -89,15 +89,13 @@ export default {
             // Organizes the JSON file.
             resultArray.push(response[key]);
           }
-         //let bajs = resultArray[5].response.split("").splice(0, 36);
           let array = resultArray[5].response.split("");
-          
-          
           let splittedArray = array.splice(0, 36);
           let forgedArray = array.join();
-          let fixedArray = forgedArray.substring(0, forgedArray.length - 5);
+          let fixedArray = forgedArray.substring(0, forgedArray.length - 5).replace(/,/g, '');
+          this.lyrics = fixedArray
           
-          console.log(fixedArray.replace(/,/g, ''))        //The translated lyrics
+          //console.log(fixedArray.replace(/,/g, ''))        //The translated lyrics
 
         })
         .catch(error => {
