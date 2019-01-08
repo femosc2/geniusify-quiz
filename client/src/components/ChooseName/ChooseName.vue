@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     submit() {
-      if (name === "") {
+      if (this.name === "") {
         this.name = "Anonymous"
       }
       this.$emit("nameChoosen", this.name);

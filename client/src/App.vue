@@ -61,6 +61,7 @@ export default {
   text-align: center;
   margin-top: 60px;
   background: white; /* linear-gradient(to right, #360033,  #0b8793); */
+  overflow: visible;
 }
 @keyframes blur {
     0% {
@@ -73,6 +74,6 @@ export default {
 * {
     animation: blur 0.4s 1 reverse;
     transition: 1s;
-    animation-timing-function: cubic-bezier(.66,-0.16,.97,.36)
+    animation-timing-function: cubic-bezier(.66,-0.16,.97,.36);
 }
 </style>

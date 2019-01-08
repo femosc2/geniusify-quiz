@@ -3,6 +3,7 @@
       <input type="text" v-model="userGuess" v-on:keydown.enter="checkWord">
       <button class="checkWordBtn" @click="checkWord">Guess</button>
       <p> Score: {{ score }} </p>
+      <h2>{{ this.song }}</h2>
       <div class="progressBar" />
     </div>
     <div v-else>
@@ -55,13 +56,13 @@ export default {
           });
         this.score = 0;
         this.gameOver = true
-      }, 150 * 1000);
+      }, 10 * 1000);
     },
     newGame() {
       location.reload()
     }
   },
-  props: ["isGenreChoosen", "words", "name"],
+  props: ["isGenreChoosen", "words", "name", "song"],
   created() {
     this.game();
   }
@@ -77,7 +78,8 @@ export default {
   }
   .progressBar {
     height: 100px;
-    background-color: black;
+    background-color: #ED4C67;
+    border-radius: 100px;
     width: 0%;
     animation: progressBar 15s infinite linear;
   }

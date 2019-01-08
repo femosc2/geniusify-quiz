@@ -8,9 +8,15 @@
       :image="image"
       :lyrics="lyrics"
     />
+<<<<<<< HEAD
     <button class="translateBtn" v-if="isGenreChoosen" @click="translateLyrics">Translate to Swedish</button>
     <game-input v-if="isGenreChoosen" :words="words" :name="name"/>
     <game-progress v-if="isGenreChoosen"/>
+=======
+    <button @click="translateLyrics">Translate to Swedish</button>
+    <game-input v-if="isGenreChoosen" :words="words" :name="name" :song="song"/>
+    <game-progress v-if="isGenreChoosen" :song="song"/>
+>>>>>>> 7d918f1ea3b330280da1323f57636184423288b2
   </div>
 </template>
 
