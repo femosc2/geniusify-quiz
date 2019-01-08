@@ -51,10 +51,25 @@ export default {
   -webkit-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1.5s 1 linear;
 }
 
 .leaderboardBtn:hover {
     background-color: #ED4C67;
     color: white;
  }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
 </style>

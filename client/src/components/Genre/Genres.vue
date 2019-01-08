@@ -13,7 +13,7 @@ export default {
         genres: [
             {genreName: "Rock", id: 1, image: "https://i.imgur.com/c4c59v5.jpg"},
             {genreName: "Pop", id: 2, image: "https://i.imgur.com/EynXNTa.jpg"},
-            {genreName: "Rap", id: 3, image: "https://i.imgur.com/uFrYkAd.png"},
+            {genreName: "Rap", id: 3, image: "https://i.imgur.com/2m66HLK.jpg"},
             {genreName: "Christmas", id: 4, image: "https://i.imgur.com/objKAmZ.jpg"}
             ],
         genreChosen: null,

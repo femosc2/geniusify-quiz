@@ -45,7 +45,6 @@ export default {
 
 <style scoped>
 div {
-  background-color: rgba(255, 255, 255, 0.8);
   color: black;
   position: fixed;
   left: 50%;
@@ -75,9 +74,10 @@ ul {
 }
 h4 {
     text-align: center;
+    
 }
 li {
-  border: 1px solid #ed4c67;
+  border-bottom: 1px solid #ed4c67;
   margin: 0;
   width: 100%;
   text-align: center;

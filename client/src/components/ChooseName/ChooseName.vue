@@ -73,8 +73,8 @@ button:active {
 }
 
 button:hover {
-    background-color: #ED4C67;
-    color: white;
+    background-color: black;
+    color:#ED4C67;
  }
 
  .cd-icon {
@@ -84,7 +84,6 @@ button:hover {
     animation-iteration-count: infinite;
     animation-timing-function: linear;
  }
-
 
 
  @keyframes rotate {

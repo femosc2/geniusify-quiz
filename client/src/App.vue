@@ -58,7 +58,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 60px; /* linear-gradient(to right, #360033,  #0b8793); */
   overflow: visible;
 }
 @keyframes blur {

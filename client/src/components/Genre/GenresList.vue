@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <div class="genreContainer">
     <!-- When click on genreButton, run function chosenGenre which loops over genres. Displays name of each Genres-->
-    <div @click="chosenGenre(genre.genreName)" v-for="genre in genres" :key="genre.id" class="genreList" v-bind:style="{ 'background-image': 'url(' + genre.image + ') ' }">{{ genre.genreName }}</div>
+    <div @click="chosenGenre(genre.genreName)" v-for="genre in genres" :key="genre.id" v-bind:style="{ 'background-image': 'url(' + genre.image + ') ' }" class="genreList">{{ genre.genreName }} </div>
   </div>
 </template>
 
@@ -27,22 +27,42 @@ export default {
 
 </script>
 <style scoped>
+
+  .genreContainer {
+    width: 100%;
+    overflow: hidden;
+
+  }
   .genreList {
     display: inline-block;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-position: center; 
+    width: 25%;
     cursor: pointer;
-    width: 280px;
     text-align: center;
-    height: 47rem;
+    height: 100vh;
     border: 1px #ED4C67;
     color: #ED4C67;
     font-size: 2rem;
-    padding: 5rem;
-    background: white;
-    margin: 1rem;
-    border-radius: 1rem;
+    animation: fadeIn 2s 1 linear;
+    background-size: cover;
+    background-position: center;
+    transition: all 3s ease;
   }
+
+  .genreList:hover {
+  -ms-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  
+   }
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 </style>
 
