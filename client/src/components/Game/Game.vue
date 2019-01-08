@@ -10,7 +10,7 @@
     />
     <button @click="translateLyrics">Translate to Swedish</button>
     <game-input v-if="isGenreChoosen" :words="words" :name="name"/>
-    
+    <game-progress v-if="isGenreChoosen" />
   </div>
 </template>
 
@@ -19,6 +19,7 @@ const axios = require("axios");
 
 import GameInfo from "./GameInfo.vue";
 import GameInput from "./GameInput.vue";
+import GameProgress from "./GameProgress.vue";
 
 export default {
   data: function() {
@@ -35,7 +36,8 @@ export default {
   },
   components: {
     GameInfo,
-    GameInput
+    GameInput,
+    GameProgress
   },
   methods: {
     getSongs() {
