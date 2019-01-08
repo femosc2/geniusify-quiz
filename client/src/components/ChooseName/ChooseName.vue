@@ -4,7 +4,7 @@
         <h2>Choose your name!</h2>
         <input type="text" v-model="name" v-on:keydown.enter="submit">
         <button @click="submit">SUBMIT</button>
-        <i class="cd-icon fas fa-compact-disc fa-10x"></i>
+        <i class="cd-icon fas fa-compact-disc"></i>
     </div>
 </template>
 
@@ -43,7 +43,7 @@ h2 {
 input {
   border: none;
   background-color: rgba(255, 255, 255, 0.4);
-  color: #ED4C67;
+  color: #ffb2bf;
   width: 50%;
   height: 100px;
   font-size: 80px;
@@ -76,18 +76,19 @@ button:active {
 }
 
 button:hover {
-    background-color: #606466;
+    background-color: white;
     color: #ED4C67;
  }
 
  .cd-icon {
+    margin-top: 2.7rem;
+    font-size: 15rem;
     color: #ED4C67;
     animation-name:            rotate;
-    animation-duration:        4s;
+    animation-duration:        20s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
  }
-
 
  @keyframes rotate {
     from {

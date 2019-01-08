@@ -47,19 +47,20 @@ export default {
   top: 4%;
   right: 2%;
   z-index: 500;
-  color: #ED4C67;
-  background: white;
+  color: white;
+  background: #ED4C67;
   margin: 1rem;
   border-radius: 50%;
   -webkit-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
-  animation: fadeIn 1.5s 1 linear;
+  transition: all .1s;
+
 }
 
 .leaderboardBtn:hover {
-    background-color: #ED4C67;
-    color: white;
+    background-color: white;
+    color: #ED4C67;
  }
 
 @keyframes fadeIn {
