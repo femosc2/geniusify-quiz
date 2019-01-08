@@ -23,18 +23,23 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
 
 h1 {
   text-transform: uppercase;
   font-size: 3rem;
   font-weight: 400;
+  color: #ED4C67;
+}
+
+h2 {
+    color: #ED4C67;
 }
 
 input {
   border: none;
   background-color: rgba(255, 255, 255, 0.3);
-  color: white;
+  color: #ED4C67;
   width: 50%;
   height: 100px;
   font-size: 80px;
@@ -44,6 +49,7 @@ input {
   box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
 }
 button {
+  cursor: pointer;
   color: #ED4C67;
   font-size: 2rem;
   background: white;
@@ -69,7 +75,7 @@ button:hover {
  }
 
  .cd-icon {
-   width: 10rem !important;
+    color: #ED4C67;
     animation-name:            rotate;
     animation-duration:        4s;
     animation-iteration-count: infinite;
