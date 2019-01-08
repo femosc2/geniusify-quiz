@@ -89,13 +89,16 @@ export default {
             // Organizes the JSON file.
             resultArray.push(response[key]);
           }
-         // let bajs = resultArray[5].response.split("").splice(0, 36);
-          let array = resultArray[5].response.split("")
-          let kiss = array.splice(0, 36);
-          let hej = array.join();
-          let paj = hej.substring(0, hej.length - 5);
+         //let bajs = resultArray[5].response.split("").splice(0, 36);
+          let array = resultArray[5].response.split("");
           
-          console.log(paj.replace(/,/g, ''))
+          
+          let splittedArray = array.splice(0, 36);
+          let forgedArray = array.join();
+          let fixedArray = forgedArray.substring(0, forgedArray.length - 5);
+          
+          console.log(fixedArray.replace(/,/g, ''))        //The translated lyrics
+
         })
         .catch(error => {
           console.log(error);
