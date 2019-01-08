@@ -3,7 +3,7 @@
       <input type="text" v-model="userGuess" v-on:keydown.enter="checkWord">
       <button @click="checkWord">Guess</button>
       <p> Score: {{ score }} </p>
-      <div class="progressBar" />
+      <div class="progressBar">Time left</div>
     </div>
     <div v-else>
       <h1>GAME OVER!</h1>
@@ -77,7 +77,8 @@ export default {
   }
   .progressBar {
     height: 100px;
-    background-color: black;
+    background-color: #ED4C67;
+    border-radius: 30px;
     width: 0%;
     animation: progressBar 15s infinite linear;
   }
