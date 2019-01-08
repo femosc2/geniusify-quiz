@@ -31,7 +31,7 @@ export default {
       image: "",
       lyrics: "",
       words: ["test1", "test2", "test3"],
-      yandexApiKey: "trnsl.1.1.20190107T101715Z.2c54edf18f30a990.dca4f7a48c0246f5640d869c171eb040cae4e585",
+      yandexApiKey: "trnsl.1.1.20190108T134850Z.6e32519bf1b85f9c.9f5af2e7ab08f991dcc9779d57dd9994ace9305d",
     };
   },
   components: {
