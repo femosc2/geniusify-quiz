@@ -59,7 +59,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   margin-top: 60px;
-  background: linear-gradient(to right, #360033,  #0b8793);
+  background: white; /* linear-gradient(to right, #360033,  #0b8793); */
 }
 @keyframes blur {
     0% {

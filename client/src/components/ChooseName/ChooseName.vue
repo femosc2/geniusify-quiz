@@ -4,6 +4,7 @@
         <h2>Choose your name!</h2>
         <input type="text" v-model="name" v-on:keydown.enter="submit">
         <button @click="submit">SUBMIT</button>
+        <i class="cd-icon fas fa-compact-disc fa-10x"></i>
     </div>
 </template>
 
@@ -23,6 +24,13 @@ export default {
 </script>
 
 <style>
+
+h1 {
+  text-transform: uppercase;
+  font-size: 3rem;
+  font-weight: 400;
+}
+
 input {
   border: none;
   background-color: rgba(255, 255, 255, 0.3);
@@ -36,10 +44,10 @@ input {
   box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
 }
 button {
-  color: #0b8793;
+  color: #ED4C67;
   font-size: 2rem;
   background: white;
-  padding: 1.3rem;
+  padding: 1.1rem;
   margin: 1rem;
   border-radius: 1rem;
   -webkit-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
@@ -56,6 +64,27 @@ button:active {
 }
 
 button:hover {
-    
+    background-color: #ED4C67;
+    color: white;
  }
+
+ .cd-icon {
+   width: 10rem !important;
+    animation-name:            rotate;
+    animation-duration:        4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+ }
+
+
+
+ @keyframes rotate {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
 </style>
