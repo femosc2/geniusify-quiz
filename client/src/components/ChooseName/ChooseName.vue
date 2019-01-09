@@ -12,13 +12,15 @@
 export default {
   data: function() {
     return {
-      name: ""
+      name: "",
     };
   },
   methods: {
     submit() {
       if (this.name === "") {
         this.name = "Anonymous"
+      } else if (this.name.length > 10) {
+        this.name = this.name.substring(0,10)
       }
       this.$emit("nameChoosen", this.name);
     }
