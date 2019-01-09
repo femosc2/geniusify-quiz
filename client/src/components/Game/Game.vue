@@ -116,4 +116,8 @@ export default {
     padding: 0.8em;
 }
 
+p {
+    color: white;
+}
+
 </style>
