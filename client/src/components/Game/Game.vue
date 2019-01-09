@@ -8,9 +8,10 @@
       :image="image"
       :lyrics="lyrics"
       :name="name"
+      v-if="!gameOver"
     />
     <button class="translateBtn" v-if="isGenreChoosen" @click="translateLyrics">Translate to Swedish</button>
-    <game-input v-if="isGenreChoosen" :words="words" :name="name"/>
+    <game-input v-if="isGenreChoosen" :words="words" :name="name" @gameOver="isGameOver(true)"/>
     <game-progress v-if="isGenreChoosen"/>
   </div>
 </template>
@@ -31,6 +32,7 @@ export default {
       image: "",
       lyrics: "",
       words: ["test1", "test2", "test3"],
+      gameOver: false,
       yandexApiKey: "trnsl.1.1.20190108T134850Z.6e32519bf1b85f9c.9f5af2e7ab08f991dcc9779d57dd9994ace9305d",
     };
   },
@@ -102,6 +104,9 @@ export default {
           console.log(error);
         });
     },
+    isGameOver(boolean) {
+      this.gameOver = boolean
+    }
   },
   props: ["isGenreChoosen", "name"],
   created() {
