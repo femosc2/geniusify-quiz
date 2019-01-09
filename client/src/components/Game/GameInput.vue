@@ -3,10 +3,6 @@
       <input type="text" v-model="userGuess" v-on:keydown.enter="checkWord">
       <button class="checkWordBtn" @click="checkWord">Guess</button>
       <h2> Score: {{ score }} </h2>
-      <h3>CORRECT WORDS: </h3>
-        <p v-for="word in correctWords">
-          {{ word }}
-        </p>
       <h2>{{ this.song }}</h2>
       <div class="progressBar" />
     </div>
@@ -25,8 +21,7 @@ export default {
     return {
       userGuess: null,
       score: 0,
-      gameOver: false,
-      correctWords: []
+      gameOver: false
       // Numb of avalible chances to guess (3)?,
     };
   },
@@ -36,7 +31,6 @@ export default {
       for (var i = 0; i < this.words.length; i++) {
         if (this.userGuess.toLowerCase() === this.words[i].toLowerCase()) {
           this.score++;
-          this.correctWords.push(this.words[i])
           this.words.splice(i, 1)
           this.userGuess = ""
         } else {
@@ -101,8 +95,5 @@ export default {
   }
   h2 {
    color: #ED4C67;
-  }
-  p {
-    display: inline-block;
   }
 </style>

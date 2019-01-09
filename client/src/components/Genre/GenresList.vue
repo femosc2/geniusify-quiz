@@ -49,8 +49,7 @@ export default {
     cursor: pointer;
     text-align: center;
     height: 100vh;
-    border: 1px #ED4C67;
-    color: #ED4C67;
+    color: white;
     font-size: 2rem;
     animation: fadeIn 2s 1 linear;
     background-size: cover;
@@ -63,9 +62,9 @@ export default {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 
-  background-color: rgba(237, 76, 103, 0.4);
+  /* background-color: rgba(237, 76, 103, 0.4); */
   background-blend-mode: screen;
-  color: white;
+  color: #ED4C67;
 
    }
 

@@ -45,7 +45,7 @@ h2 {
 input {
   border: none;
   background-color: rgba(255, 255, 255, 0.4);
-  color: #ffb2bf;
+  color: #2d3436;
   width: 50%;
   height: 100px;
   font-size: 80px;
