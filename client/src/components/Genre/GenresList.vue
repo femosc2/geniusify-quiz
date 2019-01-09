@@ -4,7 +4,8 @@
     <div 
          @click="chosenGenre(genre.genreName)" v-for="genre in genres" :key="genre.id" 
          v-bind:style="{ 'background-image': 'url(' + genre.image + ') ' }" class="genreList"> 
-        <h3 class="genreHeader">{{ genre.genreName }}</h3> </div>
+        <h3 class="genreHeader">{{ genre.genreName }}</h3> 
+    </div>
   </div>
 </template>
 
