@@ -1,5 +1,6 @@
 <template>
   <div>
+      <h2>{{ name }}</h2>
       <p> {{ artist }}</p>
       <p> {{ song }} </p>
       <p> {{ lyrics }} </p>
@@ -19,7 +20,7 @@ export default {
 
   props: ["isGenreChoosen", "playlist", 
           "song", "artist", 
-          "image", "lyrics"
+          "image", "lyrics", "name"
           ],
 
   methods: {
@@ -31,6 +32,9 @@ export default {
 <style scoped> 
   p {
     text-align: center;
+  }
+  h2 {
+    color: #ED4C67;
   }
 
 </style>

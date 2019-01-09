@@ -37,7 +37,8 @@ export default {
   computed: {
   orderedPlayers: function () {
     this.leaderboard = _.orderBy(this.players, 'score')
-    return this.leaderboard.reverse()
+    let reverseLeaderboard = this.leaderboard.reverse()
+    return reverseLeaderboard.slice(0,10)
   }
 }
 }
@@ -45,7 +46,6 @@ export default {
 
 <style scoped>
 div {
-  background-color: rgba(255, 255, 255, 0.8);
   color: black;
   position: fixed;
   left: 50%;
@@ -54,7 +54,8 @@ div {
   -webkit-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
-  overflow: visible;
+  overflow-Y: scroll;
+  height: 100vh;
 }
 .fade-enter-active,
 .fade-leave-active {
@@ -71,13 +72,13 @@ ul {
     list-style-type: none;
     text-align: center;
     padding: 0;
-    overflow: scroll;
 }
 h4 {
     text-align: center;
+    
 }
 li {
-  border: 1px solid #ed4c67;
+  border-bottom: 1px solid #ed4c67;
   margin: 0;
   width: 100%;
   text-align: center;

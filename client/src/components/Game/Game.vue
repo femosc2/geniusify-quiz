@@ -7,6 +7,7 @@
       :artist="artist"
       :image="image"
       :lyrics="lyrics"
+      :name="name"
     />
     <button class="translateBtn" v-if="isGenreChoosen" @click="translateLyrics">Translate to Swedish</button>
     <game-input v-if="isGenreChoosen" :words="words" :name="name"/>

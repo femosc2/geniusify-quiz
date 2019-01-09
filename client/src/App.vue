@@ -10,7 +10,6 @@
       <Genre @genreSelected="genreChoosen"/>
     </div>
     <div v-else>
-      <p> {{ name }}</p>
         <Game :isGenreChoosen="isGenreChoosen" :name="name"/>
     </div>
   </div>
@@ -59,8 +58,6 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  margin-top: 60px;
-  background: white; /* linear-gradient(to right, #360033,  #0b8793); */
   overflow: visible;
 }
 @keyframes blur {

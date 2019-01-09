@@ -4,7 +4,7 @@
         <h2>Choose your name!</h2>
         <input type="text" v-model="name" v-on:keydown.enter="submit">
         <button @click="submit">SUBMIT</button>
-        <i class="cd-icon fas fa-compact-disc fa-10x"></i>
+        <i class="cd-icon fas fa-compact-disc"></i>
     </div>
 </template>
 
@@ -30,19 +30,20 @@ export default {
 
 h1 {
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 3.4rem;
   font-weight: 400;
   color: #ED4C67;
 }
 
 h2 {
     color: #ED4C67;
+    font-weight: 200;
 }
 
 input {
   border: none;
-  background-color: rgba(255, 255, 255, 0.3);
-  color: #ED4C67;
+  background-color: rgba(255, 255, 255, 0.4);
+  color: #ffb2bf;
   width: 50%;
   height: 100px;
   font-size: 80px;
@@ -51,11 +52,13 @@ input {
   -moz-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
 }
+
+
 button {
   cursor: pointer;
-  color: #ED4C67;
+  color: white;
   font-size: 2rem;
-  background: white;
+  background: #ED4C67;
   padding: 1.1rem;
   margin: 1rem;
   border-radius: 1rem;
@@ -73,19 +76,19 @@ button:active {
 }
 
 button:hover {
-    background-color: #ED4C67;
-    color: white;
+    background-color: white;
+    color: #ED4C67;
  }
 
  .cd-icon {
+    margin-top: 2.7rem;
+    font-size: 15rem;
     color: #ED4C67;
     animation-name:            rotate;
-    animation-duration:        4s;
+    animation-duration:        20s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
  }
-
-
 
  @keyframes rotate {
     from {

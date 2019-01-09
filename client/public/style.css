@@ -1,3 +1,7 @@
 .main-page {
-    background: white; /* linear-gradient(to right, #778beb;  #cf6a87;); */
+    background :#2d3436; /* linear-gradient(to right, #778beb;  #cf6a87;); */
+}
+
+body {
+        margin: 0;
 }
