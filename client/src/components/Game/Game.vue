@@ -95,9 +95,7 @@ export default {
           let splittedArray = array.splice(0, 36);
           let forgedArray = array.join();
           let fixedArray = forgedArray.substring(0, forgedArray.length - 5).replace(/,/g, '');
-          this.lyrics = fixedArray
-          
-          //console.log(fixedArray.replace(/,/g, ''))        //The translated lyrics
+          this.lyrics = fixedArray + "\n"
 
         })
         .catch(error => {
@@ -116,6 +114,10 @@ export default {
 .translateBtn {
     font-size: 0.8em;
     padding: 0.8em;
+}
+
+p {
+    color: white;
 }
 
 </style>
