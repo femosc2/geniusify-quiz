@@ -56,6 +56,7 @@ div {
   box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
   overflow-Y: scroll;
   height: 100vh;
+  animation: fadeIn 0.5s 1 linear;
 }
 .fade-enter-active,
 .fade-leave-active {
@@ -72,25 +73,32 @@ ul {
     list-style-type: none;
     text-align: center;
     padding: 0;
-}
-h4 {
-    text-align: center;
-    
+    background-color: rgba(0, 0, 0, 0.8);
 }
 li {
   border-bottom: 1px solid #ed4c67;
   margin: 0;
   width: 100%;
   text-align: center;
-  height: 100px;
-  font-size: 75px;
+  height: 50px;
+  font-size: 40px;
   color: #ed4c67;
 }
 h4 {
   color: #ed4c67;
-  font-size: 100px;
+  font-size: 75px;
   padding: 0;
   margin: 0 auto;
-  text-decoration-line: underline
+  text-decoration-line: underline;
+  text-align: center;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 </style>
