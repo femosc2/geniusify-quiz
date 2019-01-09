@@ -1,7 +1,10 @@
 <template>
   <div class="genreContainer">
     <!-- When click on genreButton, run function chosenGenre which loops over genres. Displays name of each Genres-->
-    <div @click="chosenGenre(genre.genreName)" v-for="genre in genres" :key="genre.id" v-bind:style="{ 'background-image': 'url(' + genre.image + ') ' }" class="genreList">{{ genre.genreName }} </div>
+    <div 
+         @click="chosenGenre(genre.genreName)" v-for="genre in genres" :key="genre.id" 
+         v-bind:style="{ 'background-image': 'url(' + genre.image + ') ' }" class="genreList"> 
+        <h3 class="genreHeader">{{ genre.genreName }}</h3> </div>
   </div>
 </template>
 
@@ -30,9 +33,15 @@ export default {
 
   .genreContainer {
     width: 100%;
-    overflow: hidden;
-
+    overflow: hidden; 
   }
+
+.genreHeader {
+  font-size: 3.2rem;
+  margin-top: 40rem;
+  font-weight: 200;
+}
+
   .genreList {
     display: inline-block;
     width: 25%;
@@ -45,7 +54,7 @@ export default {
     animation: fadeIn 2s 1 linear;
     background-size: cover;
     background-position: center;
-    transition: all 3s ease;
+    transition: all 1.5s ease;
   }
 
   .genreList:hover {
