@@ -12,8 +12,9 @@
       v-if="!gameOver && !infoPage"
     />
     <button class="translateBtn" v-if="isGenreChoosen && !infoPage && !gameOver" @click="translateLyrics">Translate to Swedish</button>
-    <game-input v-if="isGenreChoosen && !infoPage" :words="words" :name="name" :correctWords="correctWords" @gameOver="isGameOver(true)"/>
-    <game-progress v-if="isGenreChoosen"/>
+    <game-input v-if="isGenreChoosen && !infoPage && !gameOver" :words="words" :name="name" :score="score" :correctWords="correctWords" @correctGuess="addScore"/>
+    <game-progress v-if="isGenreChoosen && !gameOver" />
+    <game-game-over v-if="gameOver" :score="score" />
   </div>
 </template>
 
@@ -24,6 +25,7 @@ import GameInfo from "./GameInfo.vue";
 import GameInput from "./GameInput.vue";
 import GameProgress from "./GameProgress.vue";
 import GameCountdown from "./GameCountdown.vue";
+import GameGameOver from "./GameGameOver.vue";
 
 export default {
   data: function() {
@@ -37,14 +39,16 @@ export default {
       gameOver: false,
       yandexApiKey: "trnsl.1.1.20190108T134850Z.6e32519bf1b85f9c.9f5af2e7ab08f991dcc9779d57dd9994ace9305d",
       correctWords: [],
-      infoPage: true
+      infoPage: true,
+      score: 0,
     };
   },
   components: {
     GameInfo,
     GameInput,
     GameProgress,
-    GameCountdown
+    GameCountdown,
+    GameGameOver
   },
   methods: {
       
@@ -116,12 +120,32 @@ export default {
     },
     countdownDone(bool) {
       this.infoPage = false;
-    }
+    },
+    addScore() {
+      this.score++;
+    },
+    game() {
+      setTimeout(() => {
+        let currentScore = {
+          name: this.name,
+          score: this.score
+        }
+        axios
+          .post(
+            "https://geniusify-quiz.firebaseio.com/Players.json"
+          , currentScore)
+          .then(response => {
+            console.log(response.data);
+          });
+        this.score = 0;
+        this.gameOver = true;
+      }, 180 * 1000);
+    },
   },
   props: ["isGenreChoosen", "name"],
   created() {
     this.setSong();
-    this.showInfoPage();
+    this.game();
   }
 };
 </script>
