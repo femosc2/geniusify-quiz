@@ -13,7 +13,7 @@
     />
     <button class="translateBtn" v-if="isGenreChoosen && !infoPage && !gameOver" @click="translateLyrics">Translate to Swedish</button>
     <game-input v-if="isGenreChoosen && !infoPage" :words="words" :name="name" :correctWords="correctWords" @gameOver="isGameOver(true)"/>
-    <game-progress v-if="isGenreChoosen && !infoPage"/>
+    <game-progress v-if="isGenreChoosen"/>
   </div>
 </template>
 
