@@ -1,6 +1,6 @@
 <template>
   <div>
-    <game-countdown v-if="infoPage" :song="song" :artist="artist" :image="image" :infoPage="infoPage" @countdownDone="countdownDone"/>
+    <game-countdown v-if="infoPage && !gameOver && isGenreChoosen" :song="song" :artist="artist" :image="image" :infoPage="infoPage" @countdownDone="countdownDone"/>
     <game-info
       :isGenreChoosen="isGenreChoosen"
       :playlist="playlist"

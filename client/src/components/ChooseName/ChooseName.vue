@@ -1,7 +1,7 @@
 <template>
     <div>
-        <h1>Welcome to Geniusify-Quiz</h1>
-        <h2>Choose your name!</h2>
+        <h1 class="mainHeader">Welcome to Geniusify-Quiz</h1>
+        <h2 class="chooseNameText">Choose your name!</h2>
         <input type="text" v-model="name" v-on:keydown.enter="submit">
         <button @click="submit">SUBMIT</button>
         <i class="cd-icon fas fa-compact-disc"></i>
@@ -30,15 +30,15 @@ export default {
 
 <style scope>
 
-h1 {
+.mainHeader {
   text-transform: uppercase;
   font-size: 3.4rem;
   font-weight: 400;
   color: #ED4C67;
 }
 
-h2 {
-    color: #ED4C67;
+.chooseNameText {
+    color: white;
     font-weight: 200;
 }
 
@@ -84,7 +84,7 @@ button:hover {
 
  .cd-icon {
     margin-top: 2.7rem;
-    font-size: 15rem;
+    font-size: 19rem;
     color: #ED4C67;
     animation-name:            rotate;
     animation-duration:        20s;

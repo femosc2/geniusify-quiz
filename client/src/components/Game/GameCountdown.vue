@@ -1,9 +1,10 @@
 <template>
     <div>
-        <p>{{ song}}</p>
-        <p>{{ artist}}</p>
-        <img :src="image" alt="">
-        <p> {{ countdown }} </p>
+        <h1 class="countdownText">Guess the missing lyrics off</h1>
+        <h1 class="songName">{{ song }}</h1>
+        <h2 class="artistName">{{ artist }}</h2>
+        <img :src="image" class="albumCover" alt="Album cover">
+        <p class="countdownTimer"> {{ countdown }} </p>
     </div>
 </template>
 
@@ -18,7 +19,7 @@ export default {
     countdownTimer() {
       setInterval(() => {
         this.countdown--;
-        if (this.countdown === 0) {
+        if (this.countdown === -50) {
           this.$emit("countdownDone", false)
       }
       }, 1 * 1000);
@@ -32,8 +33,27 @@ export default {
 </script>
 
 <style scoped>
-p {
+
+.countdownText {
   color: white;
-  font-size: 90px;
+  font-size: 1.5rem;
+  text-transform: none;
+}
+
+.songName {
+  margin-bottom: 0;
+}
+
+.artistName {
+  margin-top: 0;
+}
+
+.albumCover {
+ margin-bottom: 0;
+}
+
+.countdownTimer {
+  margin: 0;
+  font-size: 20rem;
 }
 </style>
