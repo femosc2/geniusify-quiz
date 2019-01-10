@@ -1,7 +1,6 @@
 <template>
   <div>
       <h2>{{ name }}</h2>
-      <img class="preload" :src="image" alt="">
       <p class="preload"> {{ artist }}</p>
       <p> {{ song }} </p>
       <p> {{ lyrics }} </p>

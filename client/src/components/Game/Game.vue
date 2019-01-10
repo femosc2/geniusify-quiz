@@ -1,5 +1,6 @@
 <template>
   <div>
+    <game-countdown v-if="infoPage" :song="song" :artist="artist" :image="image" :infoPage="infoPage" @countdownDone="countdownDone"/>
     <game-info
       :isGenreChoosen="isGenreChoosen"
       :playlist="playlist"
@@ -8,11 +9,11 @@
       :image="image"
       :lyrics="lyrics"
       :name="name"
-      v-if="!gameOver"
+      v-if="!gameOver && !infoPage"
     />
-    <button class="translateBtn" v-if="isGenreChoosen" @click="translateLyrics">Translate to Swedish</button>
-    <game-input v-if="isGenreChoosen" :words="words" :name="name" :correctWords="correctWords" @gameOver="isGameOver(true)"/>
-    <game-progress v-if="isGenreChoosen"/>
+    <button class="translateBtn" v-if="isGenreChoosen && !infoPage && !gameOver" @click="translateLyrics">Translate to Swedish</button>
+    <game-input v-if="isGenreChoosen && !infoPage" :words="words" :name="name" :correctWords="correctWords" @gameOver="isGameOver(true)"/>
+    <game-progress v-if="isGenreChoosen && !infoPage"/>
   </div>
 </template>
 
@@ -22,6 +23,7 @@ const axios = require("axios");
 import GameInfo from "./GameInfo.vue";
 import GameInput from "./GameInput.vue";
 import GameProgress from "./GameProgress.vue";
+import GameCountdown from "./GameCountdown.vue";
 
 export default {
   data: function() {
@@ -34,13 +36,15 @@ export default {
       words: ["test1", "test2", "test3"],
       gameOver: false,
       yandexApiKey: "trnsl.1.1.20190108T134850Z.6e32519bf1b85f9c.9f5af2e7ab08f991dcc9779d57dd9994ace9305d",
-      correctWords: []
+      correctWords: [],
+      infoPage: true
     };
   },
   components: {
     GameInfo,
     GameInput,
-    GameProgress
+    GameProgress,
+    GameCountdown
   },
   methods: {
       
@@ -78,7 +82,8 @@ export default {
         //Updates every 5 second to see what song is currently selected
         this.correctWords = []
         this.getSongs();
-      }, 15 * 1000);
+        this.infoPage = true
+      }, 18 * 1000);
     },
     translateLyrics() {
       axios
@@ -108,11 +113,15 @@ export default {
     },
     isGameOver(boolean) {
       this.gameOver = boolean
+    },
+    countdownDone(bool) {
+      this.infoPage = false;
     }
   },
   props: ["isGenreChoosen", "name"],
   created() {
     this.setSong();
+    this.showInfoPage();
   }
 };
 </script>
