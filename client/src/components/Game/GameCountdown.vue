@@ -36,24 +36,32 @@ export default {
 
 .countdownText {
   color: white;
-  font-size: 1.5rem;
-  text-transform: none;
+  font-size: 1.2rem;
+  font-weight: 200;
+  text-transform: uppercase;
+   margin-bottom: 0;
 }
 
 .songName {
+  color: #ED4C67;
+  font-size: 4rem;
   margin-bottom: 0;
+  margin-top: .5rem;
 }
 
 .artistName {
+  color: #ED4C67;
+  font-size: 1.4;
   margin-top: 0;
 }
 
 .albumCover {
  margin-bottom: 0;
+ width: 17rem;
 }
 
 .countdownTimer {
   margin: 0;
-  font-size: 20rem;
+  font-size: 17rem;
 }
 </style>

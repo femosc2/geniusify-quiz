@@ -30,6 +30,10 @@ export default {
 
 <style scope>
 
+body {
+      background-color:  #2d3436;
+}
+
 .mainHeader {
   text-transform: uppercase;
   font-size: 3.4rem;
@@ -45,7 +49,7 @@ export default {
 input {
   border: none;
   background-color: rgba(255, 255, 255, 0.4);
-  color: #2d3436;
+  color: white;
   width: 50%;
   height: 100px;
   font-size: 80px;

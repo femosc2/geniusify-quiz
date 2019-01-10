@@ -63,7 +63,7 @@ export default {
   transform: scale(1.1);
 
   /* background-color: rgba(237, 76, 103, 0.4); */
-  background-blend-mode: screen;
+ /* background-blend-mode: screen; */
   color: #ED4C67;
 
    }
