@@ -51,7 +51,7 @@ export default {
     opacity: 0;
   }
   .progressBar {
-    height: 100px;
+    height: 2px;
     background-color: #ED4C67;
     border-radius: 100px;
     width: 0%;

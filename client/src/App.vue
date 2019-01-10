@@ -69,7 +69,7 @@ export default {
     }
 }
 * {
-    animation: blur 0.4s 1 reverse;
+    animation: blur 0.9s 1 reverse;
     transition: 1s;
     animation-timing-function: cubic-bezier(.66,-0.16,.97,.36);
 }

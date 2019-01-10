@@ -1,6 +1,7 @@
 <template>
     <div>
-      <h1>GAME OVER! SCORE: {{ score }}</h1>
+      <h1 class="gameOver">GAME OVER!</h1>
+      <h2 class="score">SCORE: {{ score }}</h2>
       <button class="newGameBtn" @click="newGame">NEW GAME</button>
     </div>
 </template>
@@ -22,5 +23,17 @@ export default {
 </script>
 
 <style>
+
+.gameOver {
+  text-transform: uppercase;
+  font-size: 6rem;
+  font-weight: 200;
+  color: #ED4C67;
+}
+
+.score {
+    color: white;
+    font-size: 2.4rem;
+}
 
 </style>

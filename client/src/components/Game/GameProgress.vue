@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h2>Time left</h2>
+    <h2 class="loadingText">Game time left</h2>
     <div class="progressBar">
       <i class="loading-icon fas fa-compact-disc fa-4x"></i>
     </div>
@@ -26,7 +26,7 @@ export default {
   background-color: #ed4c67;
   border-radius: 100px;
   width: 0%;
-  animation: progressBar 150s 1 linear;
+  animation: progressBar 200s 1 linear;
   transition: 1s;
 }
    .loading-icon {
@@ -37,12 +37,19 @@ export default {
     animation-timing-function: linear;
  }
 
+ .loadingText {
+   color: white;
+   font-weight: 200;
+   margin-bottom: 0;
+   text-transform: uppercase;
+ }
+
 @keyframes progressBar {
   0% {
-    width: 0%;
+    width: 100%;
   }
   100% {
-    width: 100%;
+    width: 0%;
   }
 }
 

@@ -30,9 +30,7 @@ export default {
 
 <style scope>
 
-body {
-      background-color:  #2d3436;
-}
+
 
 .mainHeader {
   text-transform: uppercase;

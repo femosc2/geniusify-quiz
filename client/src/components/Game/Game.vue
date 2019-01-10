@@ -139,7 +139,7 @@ export default {
           });
         this.score = 0;
         this.gameOver = true;
-      }, 180 * 1000);
+      }, 200 * 1000);
     },
   },
   props: ["isGenreChoosen", "name"],

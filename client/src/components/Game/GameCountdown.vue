@@ -12,14 +12,14 @@
 export default {
   data: function() {
     return {
-      countdown: 3
+      countdown: 5
     };
   },
   methods: {
     countdownTimer() {
       setInterval(() => {
         this.countdown--;
-        if (this.countdown === -50) {
+        if (this.countdown === 0) {
           this.$emit("countdownDone", false)
       }
       }, 1 * 1000);
