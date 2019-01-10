@@ -11,7 +11,7 @@
       v-if="!gameOver"
     />
     <button class="translateBtn" v-if="isGenreChoosen" @click="translateLyrics">Translate to Swedish</button>
-    <game-input v-if="isGenreChoosen" :words="words" :name="name" @gameOver="isGameOver(true)"/>
+    <game-input v-if="isGenreChoosen" :words="words" :name="name" :correctWords="correctWords" @gameOver="isGameOver(true)"/>
     <game-progress v-if="isGenreChoosen"/>
   </div>
 </template>
@@ -34,6 +34,7 @@ export default {
       words: ["test1", "test2", "test3"],
       gameOver: false,
       yandexApiKey: "trnsl.1.1.20190108T134850Z.6e32519bf1b85f9c.9f5af2e7ab08f991dcc9779d57dd9994ace9305d",
+      correctWords: []
     };
   },
   components: {
@@ -75,6 +76,7 @@ export default {
       this.getSongs(); // Chooses a song as soon as it is clicked
       setInterval(() => {
         //Updates every 5 second to see what song is currently selected
+        this.correctWords = []
         this.getSongs();
       }, 15 * 1000);
     },

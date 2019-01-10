@@ -23,7 +23,6 @@ export default {
       userGuess: null,
       score: 0,
       gameOver: false,
-      correctWords: []
       // Numb of avalible chances to guess (3)?,
     };
   },
@@ -58,13 +57,13 @@ export default {
         this.score = 0;
         this.gameOver = true
         this.$emit("gameOver", true)
-      }, 10 * 1000);
+      }, 150 * 1000);
     },
     newGame() {
       location.reload()
     }
   },
-  props: ["isGenreChoosen", "words", "name", "song"],
+  props: ["isGenreChoosen", "words", "name", "song", "correctWords"],
   created() {
     this.game();
   }

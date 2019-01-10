@@ -1,6 +1,6 @@
 .main-page {
     background: linear-gradient(to bottom, #2d3436, #2d3436, #2d3436, rgba(237, 76, 103, 0.856));
-    height: 100vh;
+    background-repeat: repeat;
 }
 
 body {

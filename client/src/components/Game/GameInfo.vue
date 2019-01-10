@@ -1,10 +1,10 @@
 <template>
   <div>
       <h2>{{ name }}</h2>
-      <p> {{ artist }}</p>
+      <img class="preload" :src="image" alt="">
+      <p class="preload"> {{ artist }}</p>
       <p> {{ song }} </p>
       <p> {{ lyrics }} </p>
-      <img :src="image" alt="">
     </div>
 </template>
 
@@ -35,6 +35,25 @@ export default {
   }
   h2 {
     color: #ED4C67;
+  }
+  .preload {
+    animation: load 1s 1 linear;
+    animation-fill-mode: forwards;
+  }
+  @keyframes load {
+    0% {
+      opacity: 1;
+      display: block;
+    }
+    95% {
+      height: inherit;
+      width: inherit;
+    }
+    100% {
+      opacity: 0;
+      height: 0px;
+      width: 0px;
+    }
   }
 
 </style>
