@@ -27,8 +27,6 @@ export default {
           this.words.splice(i, 1);
           this.userGuess = "";
           this.$emit("correctGuess");
-        } else {
-          this.userGuess = "";
         }
       }
     }
