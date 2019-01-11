@@ -34,9 +34,6 @@ export default {
     }
   },
   props: ["isGenreChoosen", "words", "name", "song", "correctWords", "score"],
-  created() {
-    this.game();
-  }
 };
 </script>
 
