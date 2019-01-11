@@ -91,7 +91,7 @@ export default {
           }
           console.log(resultArray[0].words)
           this.playlist = resultArray;
-          this.song = this.playlist[0].song; //Playlist[0] = Object which stores information about song
+          this.song = this.playlist[0].name; //Playlist[0] = Object which stores information about song
           this.artist = this.playlist[0].artist;
           this.image = this.playlist[0].imageUrl;
           this.lyrics = this.playlist[0].lyrics;

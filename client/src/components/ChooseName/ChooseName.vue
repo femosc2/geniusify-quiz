@@ -2,7 +2,7 @@
   <div>
     <h1 class="mainHeader">Welcome to Geniusify-Quiz</h1>
     <h2 class="chooseNameText">Choose your name!</h2>
-    <input type="text" v-model="name" v-on:keydown.enter="submit" autofocus placeholder="Unicornslayer1337">
+    <input type="text" v-model="name" v-on:keydown.enter="submit" autofocus placeholder="Unicornlayer1337">
     <button @click="submit">SUBMIT</button>
     <i class="cd-icon fas fa-compact-disc"></i>
   </div>
