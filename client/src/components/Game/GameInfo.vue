@@ -1,59 +1,59 @@
 <template>
   <div>
-      <h2>{{ name }}</h2>
-      <p class="preload"> {{ artist }}</p>
-      <p> {{ song }} </p>
-      <p> {{ lyrics }} </p>
-    </div>
+    <h2>{{ name }}</h2>
+    <p class="preload">{{ artist }}</p>
+    <p>{{ song }}</p>
+    <p>{{ lyrics }}</p>
+  </div>
 </template>
 
 <script>
-const axios = require("axios")
+const axios = require("axios");
 
 export default {
-
   data: function() {
-    return {
-    };
+    return {};
   },
 
-  props: ["isGenreChoosen", "playlist", 
-          "song", "artist", 
-          "image", "lyrics", "name"
-          ],
-
-  methods: {
-
-  },
+  props: [
+    "isGenreChoosen",
+    "playlist",
+    "song",
+    "artist",
+    "image",
+    "lyrics",
+    "name"
+  ]
 };
 </script>
 
-<style scoped> 
-  p {
-    text-align: center;
-  }
-  h2 {
-    color: #ED4C67;
-  }
-  .preload {
-    animation: load 1s 1 linear;
-    animation-fill-mode: forwards;
-  }
-  
-  @keyframes load {
-    0% {
-      opacity: 1;
-      display: block;
-    }
-    95% {
-      height: inherit;
-      width: inherit;
-    }
-    100% {
-      opacity: 0;
-      height: 0px;
-      width: 0px;
-    }
-  }
+<style scoped>
 
+p {
+  text-align: center;
+}
+
+h2 {
+  color: #ed4c67;
+}
+.preload {
+  animation: load 1s 1 linear;
+  animation-fill-mode: forwards;
+}
+
+@keyframes load {
+  0% {
+    opacity: 1;
+    display: block;
+  }
+  95% {
+    height: inherit;
+    width: inherit;
+  }
+  100% {
+    opacity: 0;
+    height: 0px;
+    width: 0px;
+  }
+}
 </style>

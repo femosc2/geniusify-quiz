@@ -1,26 +1,25 @@
 <template>
   <div id="app">
     <div v-if="!isNameChoosen">
-      <choose-name @nameChoosen="setName" />
+      <choose-name @nameChoosen="setName"/>
     </div>
     <div v-if="isNameChoosen">
-      <leaderboard />
+      <leaderboard/>
     </div>
     <div v-if="isGenreChoosen === null && isNameChoosen">
       <Genre @genreSelected="genreChoosen"/>
     </div>
     <div v-else>
-        <Game :isGenreChoosen="isGenreChoosen" :name="name"/>
+      <Game :isGenreChoosen="isGenreChoosen" :name="name"/>
     </div>
   </div>
 </template>
 
 <script>
-
 import Genre from "./components/Genre/Genres.vue";
 import Leaderboard from "./components/Leaderboard/Leaderboard.vue";
 import Game from "./components/Game/Game.vue";
-import ChooseName from "./components/ChooseName/ChooseName.vue"
+import ChooseName from "./components/ChooseName/ChooseName.vue";
 
 export default {
   name: "app",
@@ -29,7 +28,6 @@ export default {
     Leaderboard,
     Game,
     ChooseName
-
   },
   data: function() {
     return {
@@ -42,17 +40,24 @@ export default {
   methods: {
     genreChoosen(genreSelected) {
       // Function which recieves the current Genre
-      this.isGenreChoosen = genreSelected
+      this.isGenreChoosen = genreSelected;
     },
     setName(name) {
-      this.name = name
-      this.isNameChoosen = true
+      this.name = name;
+      this.isNameChoosen = true;
     }
-  },
+  }
 };
 </script>
 
 <style>
+
+* {
+  animation: blur 0.9s 1 reverse;
+  transition: 1s;
+  animation-timing-function: cubic-bezier(0.66, -0.16, 0.97, 0.36);
+}
+
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -60,17 +65,13 @@ export default {
   text-align: center;
   overflow: visible;
 }
+
 @keyframes blur {
-    0% {
-        filter: blur(0px)
-    }
-    100% {
-        filter:blur(15px)
-    }
-}
-* {
-    animation: blur 0.9s 1 reverse;
-    transition: 1s;
-    animation-timing-function: cubic-bezier(.66,-0.16,.97,.36);
+  0% {
+    filter: blur(0px);
+  }
+  100% {
+    filter: blur(15px);
+  }
 }
 </style>

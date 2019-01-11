@@ -1,23 +1,26 @@
 <template>
-    <div>
-        <ul v-if="isLeaderboardShowing">
-            <h4>Leaderboard</h4>
-            <transition-group name="fade">
-                <li v-for="(player,index) in orderedPlayers" :key="index+1">{{ player.name }} : {{ player.score }}</li>
-            </transition-group>
-        </ul>
-    </div>
+  <div>
+    <ul v-if="isLeaderboardShowing">
+      <h4>Leaderboard</h4>
+      <transition-group name="fade">
+        <li
+          v-for="(player,index) in orderedPlayers" :key="index+1">
+          {{ player.name }} : {{ player.score }}
+        </li>
+      </transition-group>
+    </ul>
+  </div>
 </template>
 
 <script>
 const axios = require("axios");
-const _ = require("lodash")
+const _ = require("lodash");
 
 export default {
   data: function() {
     return {
       players: "",
-      leaderboard: "",
+      leaderboard: ""
     };
   },
   methods: {
@@ -28,23 +31,24 @@ export default {
           console.log(response.data);
           this.players = response.data;
         });
-    },
+    }
   },
   created() {
     this.getPlayers();
   },
   props: ["isLeaderboardShowing"],
   computed: {
-  orderedPlayers: function () {
-    this.leaderboard = _.orderBy(this.players, 'score')
-    let reverseLeaderboard = this.leaderboard.reverse()
-    return reverseLeaderboard.slice(0,10)
+    orderedPlayers: function() {
+      this.leaderboard = _.orderBy(this.players, "score");
+      let reverseLeaderboard = this.leaderboard.reverse();
+      return reverseLeaderboard.slice(0, 10);
+    }
   }
-}
-}
+};
 </script>
 
 <style scoped>
+
 div {
   color: black;
   position: fixed;
@@ -54,10 +58,11 @@ div {
   -webkit-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 0px 30px -2px rgba(0, 0, 0, 0.5);
-  overflow-Y: scroll;
+  overflow-y: scroll;
   height: 100vh;
   animation: fadeIn 0.5s 1 linear;
 }
+
 .fade-enter-active,
 .fade-leave-active {
   transition: all 10s, height 10s, opacity 0.5s;
@@ -69,12 +74,14 @@ div {
   opacity: 0;
   max-height: 0px;
 }
+
 ul {
-    list-style-type: none;
-    text-align: center;
-    padding: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+  list-style-type: none;
+  text-align: center;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.8);
 }
+
 li {
   border-bottom: 1px solid #ed4c67;
   margin: 0;
@@ -84,6 +91,7 @@ li {
   font-size: 40px;
   color: #ed4c67;
 }
+
 h4 {
   color: #ed4c67;
   font-size: 75px;

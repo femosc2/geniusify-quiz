@@ -1,9 +1,20 @@
 <template>
-    <div>
-      <leaderboard-button @leaderboardToggledOff="toggleLeaderboard(false)" @leaderboardToggledOn="toggleLeaderboard(true)" />
-      <leaderboard-list v-if="isLeaderboardShowing" :isLeaderboardShowing="isLeaderboardShowing" />
-      <leaderboard-exit @leaderboardToggledOff="toggleLeaderboard(false)" @leaderboardToggledOn="toggleLeaderboard(true)" v-if="isLeaderboardShowing" :isLeaderboardShowing="isLeaderboardShowing"/>
-    </div>
+  <div>
+    <leaderboard-button
+      @leaderboardToggledOff="toggleLeaderboard(false)"
+      @leaderboardToggledOn="toggleLeaderboard(true)"
+    />
+    <leaderboard-list 
+      v-if="isLeaderboardShowing" 
+      :isLeaderboardShowing="isLeaderboardShowing"
+    />
+    <leaderboard-exit
+      @leaderboardToggledOff="toggleLeaderboard(false)"
+      @leaderboardToggledOn="toggleLeaderboard(true)"
+      v-if="isLeaderboardShowing"
+      :isLeaderboardShowing="isLeaderboardShowing"
+    />
+  </div>
 </template>
 
 <script>
@@ -12,9 +23,9 @@ import LeaderboardButton from "./LeaderboardButton.vue";
 
 export default {
   data: function() {
-      return {
-          isLeaderboardShowing: false
-      }
+    return {
+      isLeaderboardShowing: false
+    };
   },
   methods: {
     toggleLeaderboard(toggleStatus) {
@@ -22,8 +33,8 @@ export default {
     }
   },
   components: {
-      LeaderboardList,
-      LeaderboardButton,
+    LeaderboardList,
+    LeaderboardButton
   }
 };
 </script>
