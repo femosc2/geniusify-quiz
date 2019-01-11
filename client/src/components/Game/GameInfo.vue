@@ -1,9 +1,8 @@
 <template>
   <div>
-    <h2>{{ name }}</h2>
-    <p class="preload">{{ artist }}</p>
-    <p>{{ song }}</p>
-    <p>{{ lyrics }}</p>
+    <h2 class="playerName">{{ name }}</h2>
+    <p class="song">{{ song }}</p>
+    <p class="lyrics">{{ lyrics }}</p>
   </div>
 </template>
 
@@ -33,9 +32,27 @@ p {
   text-align: center;
 }
 
-h2 {
-  color: #ed4c67;
+
+.playerName {
+ color: white;
+ font-weight: 200;
+ margin-bottom: 1rem;
 }
+
+.song {
+  color: #ED4C67;
+  font-size: 3rem;
+  margin-bottom: .5;
+  margin-top: 0;
+}
+
+.lyrics {
+  margin-top: 0;
+  font-size: 2rem;
+  margin-left: 12rem;
+  margin-right: 12rem;
+}
+
 .preload {
   animation: load 1s 1 linear;
   animation-fill-mode: forwards;

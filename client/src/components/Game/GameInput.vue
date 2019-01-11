@@ -1,6 +1,6 @@
 <template>
   <div v-if="!gameOver">
-    <input type="text" v-model="userGuess" v-on:keydown.enter="checkWord">
+    <input class="inputGuess" type="text" v-model="userGuess" v-on:keydown.enter="checkWord">
     <button class="checkWordBtn" @click="checkWord">Guess</button>
     <h2>Score: {{ score }}</h2>
     <p v-for="(word, index) in correctWords" :key="index">{{ word }}</p>
@@ -39,6 +39,10 @@ export default {
 
 <style scoped>
 
+.inputGuess {
+  margin-top: 2rem;
+}
+
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
@@ -49,6 +53,7 @@ export default {
 }
 
 .progressBar {
+  margin-top: 2rem;
   height: 2px;
   background-color: #ed4c67;
   border-radius: 100px;
