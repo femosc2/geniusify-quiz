@@ -85,7 +85,7 @@ button:hover {
  }
 
  .cd-icon {
-    margin-top: 2.7rem;
+    margin-top: 2.4rem;
     font-size: 19rem;
     color: #ED4C67;
     animation-name:            rotate;

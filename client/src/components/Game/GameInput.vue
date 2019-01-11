@@ -18,7 +18,6 @@ export default {
     return {
       userGuess: null,
       gameOver: false,
-      // Numb of avalible chances to guess (3)?,
     };
   },
 
@@ -55,11 +54,12 @@ export default {
     background-color: #ED4C67;
     border-radius: 100px;
     width: 0%;
-    animation: progressBar 15s infinite linear;
+    animation: progressBar 13s infinite linear;
   }
   .newGameBtn {
     font-size: 1.7em;
   }
+
   @keyframes progressBar {
     0% {
       width: 0%;
@@ -71,4 +71,5 @@ export default {
   h2 {
    color: #ED4C67;
   }
+  
 </style>

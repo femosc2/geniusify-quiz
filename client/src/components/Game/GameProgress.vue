@@ -2,7 +2,7 @@
 <div>
     <h2 class="loadingText">Game time left</h2>
     <div class="progressBar">
-      <i class="loading-icon fas fa-compact-disc fa-4x"></i>
+        <i class="loading-icon fas fa-compact-disc"></i>
     </div>
 
 </div>
@@ -22,19 +22,24 @@ export default {
 <style scoped>
 
 .progressBar {
-  height: 4rem;
-  background-color: #ed4c67;
+  height: 3.2rem;
+  background-color: white;
   border-radius: 100px;
-  width: 0%;
+  width: 100%;
   animation: progressBar 200s 1 linear;
   transition: 1s;
 }
    .loading-icon {
-    color: white;
+    float: right;
+    font-size: 3rem;
+    color: #ed4c67;
     animation-name:            rotate;
     animation-duration:        2s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
+    display: inline-block;
+    margin-right: .5rem;
+    margin-top: .1rem;
  }
 
  .loadingText {

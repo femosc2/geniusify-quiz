@@ -39,6 +39,7 @@ export default {
     animation: load 1s 1 linear;
     animation-fill-mode: forwards;
   }
+  
   @keyframes load {
     0% {
       opacity: 1;
