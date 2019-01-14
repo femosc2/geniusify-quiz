@@ -39,10 +39,11 @@ export default {
   },
   methods: {
     genreChoosen(genreSelected) {
-      // Function which recieves the current Genre
+      // Sets the genre, parameter recieved from Genre.vue
       this.isGenreChoosen = genreSelected;
     },
     setName(name) {
+      // Sets the name of the user, parameter recieved from ChooseName.vue
       this.name = name;
       this.isNameChoosen = true;
     }

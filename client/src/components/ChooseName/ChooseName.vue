@@ -17,10 +17,11 @@ export default {
   },
   methods: {
     submit() {
+      // submits the chosen name
       if (this.name === "") {
-        this.name = "Anonymous";
+        this.name = "Anonymous"; // if the user does choose a name
       } else if (this.name.length > 10) {
-        this.name = this.name.substring(0, 10);
+        this.name = this.name.substring(0, 10); // Shortens the username if it is to long.
       }
       this.$emit("nameChoosen", this.name);
     }
