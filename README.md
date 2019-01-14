@@ -1,4 +1,4 @@
-<h1 align="center">:musical_score: Genisuify-Quiz :musical_score:</h1>
+<h1 align="center">:musical_score: Geniusify-Quiz :musical_score:</h1>
 
 ## 1. Medverkande
 <ul>
