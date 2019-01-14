@@ -35,8 +35,11 @@
 
 ### 4.2 Back-end
 <ol>
-  <li>  </li> 
-  <li>  </li>
+  <li> Starta backend i intelliJ med hjälp av klassen Main. </li> 
+  <li> Servern kommer automatiskt att börja lyssna på port 9022. </li>
+  <li> Starta frontend genom att cd:a in i /geniusify-quiz/client och sen skriva npm run serve. </li>
+  <li> <a http://localhost:8080/"> http://localhost:8080/ </a></li>
+  <li> Påbörja spelet genom att skriva ditt namn och sedan klicka på SUBMIT. </li>
 </ol>
 
 ## 5 API Dokumentation:
