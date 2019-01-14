@@ -19,6 +19,7 @@
 <ol>
   <li> Clone / ladda ner repo </li> 
   <li> Öppna terminal/CMD och navigera till mappen geniusify-quiz
+  <li> skriv <code> npm install </code> </li>
   <li> skriv <code> $ npm install -g vue </code> </li>
   <li> Navigera till mappen client - geniusify-quiz/client </li> 
   <li> Ladda ner Java SDK och IntelliJ och installera dessa. </li>
