@@ -28,7 +28,7 @@ export default {
           this.words.splice(i, 1); // Removes the word from the words array.
           this.userGuess = ""; // Resets the user guess so the user wont have to manually delete it.
           this.$emit("correctGuess"); // Tells Game.vue that the guess was correct.
-        }
+        } 
       }
     }
   },
@@ -51,7 +51,7 @@ export default {
   transition: opacity 0.5s;
 }
 
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter, .fade-leave-to {
   opacity: 0;
 }
 

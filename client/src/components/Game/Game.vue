@@ -124,7 +124,7 @@ export default {
         .then(response => {
           const resultArray = [];
           for (let key in response) {
-            // Organizes the JSON file.
+            // Organizes the  JSON response file.
             resultArray.push(response[key]);
           }
           let array = resultArray[5].response.split("");
@@ -143,7 +143,8 @@ export default {
       //Recieves data which indicates if game is over.
       this.gameOver = boolean;
     },
-    countdownDone(bool) {
+    // Hides infoPage if the counter has reached 5 seconds
+    countdownDone() {
       this.infoPage = false;
     },
     addScore() {
@@ -151,7 +152,7 @@ export default {
       this.score++;
     },
     game() {
-      // Runs the game. The game is 200 seconds long and when the game is over it posts the result to the database.
+      // Runs the game. The game is 300 seconds long and when the game is over it posts the result to the database.
       setTimeout(() => {
         let currentScore = {
           name: this.name,
@@ -170,6 +171,7 @@ export default {
     }
   },
   props: ["isGenreChoosen", "name"],
+  
   created() {
     //When the component is created run these methods.
     this.setSong();

@@ -29,6 +29,7 @@ export default {
   },
   methods: {
     toggleLeaderboard(toggleStatus) {
+      // Simply hides / shows the leaderboard
       this.isLeaderboardShowing = toggleStatus;
     }
   },

@@ -15,6 +15,7 @@ export default {
   },
   methods: {
     quit() {
+    // Method which reloads the page
       location.reload()
     }
   }

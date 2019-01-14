@@ -5,7 +5,7 @@
       <transition-group name="fade">
         <li
           v-for="(player,index) in orderedPlayers" :key="index+1">
-          <!-- Index+1 is there in order for transition to work -->
+          <!-- Index+1 creates a unique key and is there in order for transitions to work -->
           {{ player.name }} : {{ player.score }}
         </li>
       </transition-group>
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     getPlayers() {
-      // Gets the leaderboard from firebase.
+      // Gets the leaderboard from Googles Firebase.
       axios
         .get("https://geniusify-quiz.firebaseio.com/Players.json")
         .then(response => {
@@ -34,6 +34,7 @@ export default {
         });
     }
   },
+  // Fetches the players when the leaderboard is activated/created
   created() {
     this.getPlayers();
   },

@@ -1,6 +1,5 @@
 <template>
   <div class="genreContainer">
-    <!-- When click on genreButton, run function chosenGenre which loops over genres. Displays name of each Genres-->
     <div
       @click="chosenGenre(genre.genreName)"
       v-for="genre in genres"
@@ -20,7 +19,6 @@ export default {
       genreChosen: null
     };
   },
-  // props collects a list of genres from parent Ganre.vue
   props: ["genres"],
 
   methods: {

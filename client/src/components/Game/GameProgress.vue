@@ -8,6 +8,8 @@
 </template>
 
 <script>
+// This page simply collects various data through props and displays them for the user, no functionality
+
 export default {
   data: function() {
     return {

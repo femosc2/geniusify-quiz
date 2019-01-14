@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     countdownTimer() {
-      //Countdown timer between the different songs
+      //Countdown timer - running before every round starts
       setInterval(() => {
         this.countdown--;
         if (this.countdown === 0) {
@@ -26,6 +26,7 @@ export default {
       }, 1 * 1000);
     }
   },
+  // Starts the countdownTimer when the page is created
   created() {
     this.countdownTimer();
   },
