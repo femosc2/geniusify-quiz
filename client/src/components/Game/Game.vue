@@ -106,7 +106,7 @@ export default {
         this.correctWords = [];
         this.getSongs();
         this.infoPage = true;
-      }, 18 * 1000);
+      }, 28 * 1000);
     },
     translateLyrics() {
       //Method for translating lyrics
@@ -163,7 +163,7 @@ export default {
             console.log(response.data);
           });
         this.gameOver = true;
-      }, 200 * 1000);
+      }, 300 * 1000);
     }
   },
   props: ["isGenreChoosen", "name"],

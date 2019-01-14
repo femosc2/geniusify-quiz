@@ -24,7 +24,7 @@ export default {
   background-color: white;
   border-radius: 100px;
   width: 100%;
-  animation: progressBar 200s 1 linear;
+  animation: progressBar 300s 1 linear;
   transition: 1s;
 }
 

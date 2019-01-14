@@ -57,7 +57,7 @@ export default {
   background-color: #ed4c67;
   border-radius: 100px;
   width: 0%;
-  animation: progressBar 13s infinite linear;
+  animation: progressBar 23s infinite linear;
 }
 .newGameBtn {
   font-size: 1.7em;
