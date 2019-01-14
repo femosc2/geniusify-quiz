@@ -90,7 +90,7 @@ Endpoint: /genre/christmas <br>
 Returns: JSON-Objekt med artist, låtnamn, album, albumomslag, låttext och borttagna ord. <br>
 Statuscode 500: Backenden är offline. <br>
 
-### 3.5 Pop
+### 5.5 Pop
 METHOD: Get. <br>
 Endpoint: /genre/pop <br>
 Returns: JSON-Objekt med artist, låtnamn, album, albumomslag, låttext och borttagna ord. <br>
