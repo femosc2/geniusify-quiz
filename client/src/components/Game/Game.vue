@@ -76,13 +76,13 @@ export default {
     getSongs() {
       // Function for retrieving the song, artist, image and lyrics from the back-end
       if (this.isGenreChoosen === "Rock") {
-        this.playlist = "http://10.2.15.173:9022/genre/rock";
+        this.playlist = "http://localhost:9022/genre/rock";
       } else if (this.isGenreChoosen === "Christmas") {
-        this.playlist = "http://10.2.15.173:9022/genre/christmas";
+        this.playlist = "http://localhost:9022/genre/christmas";
       } else if (this.isGenreChoosen === "Pop") {
-        this.playlist = "http://10.2.15.173:9022/genre/pop";
+        this.playlist = "http://localhost:9022/genre/pop";
       } else if (this.isGenreChoosen === "Rap") {
-        this.playlist = "http://10.2.15.173:9022/genre/rap";
+        this.playlist = "http://localhost:9022/genre/rap";
       }
       axios
         .get(this.playlist) //get from the chosen playlist
