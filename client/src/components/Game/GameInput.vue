@@ -3,7 +3,7 @@
     <input class="inputGuess" type="text" v-model="userGuess" v-on:keydown.enter="checkWord">
     <button class="checkWordBtn" @click="checkWord">Guess</button>
     <h2>Score: {{ score }}</h2>
-    <p v-for="(word, index) in correctWords" :key="index">{{ word }}</p>
+    <p class="correctWord" v-for="(word, index) in correctWords" :key="index">{{ word }} &nbsp; </p>
     <h2>{{ this.song }}</h2>
     <div class="progressBar"/>
   </div>
@@ -38,6 +38,10 @@ export default {
 
 <style scoped>
 
+.correctWord {
+  display: inline;
+}
+
 .inputGuess {
   margin-top: 2rem;
 }
@@ -55,7 +59,7 @@ export default {
   margin-top: 2rem;
   height: 2px;
   background-color: #ed4c67;
-  border-radius: 100px;
+  border-radius: 15px 50px 30px 5px;
   width: 0%;
   animation: progressBar 23s infinite linear;
 }

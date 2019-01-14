@@ -2,7 +2,7 @@
   <div>
     <h1 class="mainHeader">Welcome to Geniusify-Quiz</h1>
     <h2 class="chooseNameText">Choose your name!</h2>
-    <input type="text" v-model="name" v-on:keydown.enter="submit" autofocus placeholder="UnicornSlayer1337">
+    <input type="text" v-model="name" v-on:keydown.enter="submit" autofocus placeholder="Name">
     <button @click="submit">SUBMIT</button>
     <i class="cd-icon fas fa-compact-disc"></i>
   </div>
@@ -17,7 +17,7 @@ export default {
   },
   methods: {
     submit() {
-      // submits the chosen name
+      // Method for submitting the chosen name
       if (this.name === "") {
         this.name = "Anonymous"; // if the user does choose a name
       } else if (this.name.length > 10) {

@@ -1,8 +1,7 @@
 <template>
   <div>
-    <div class="leaderboardBtn" @click="toggleLeaderboard(), show=!show">
-      <i v-if="show" class="icon fas fa-list-ol"></i>
-      <i v-else class="icon fas fa-undo"></i>
+    <div class="exitBtn" @click="quit">
+      <i class="icon fas fa-times"></i>
     </div>
   </div>
 </template>
@@ -11,22 +10,12 @@
 export default {
   data: function() {
     return {
-      show: true,
-      leaderboardToggle: false
+
     };
   },
   methods: {
-    toggleLeaderboard() {
-      // Toggles the visibility of the leaderboard on or off.
-      if (this.leaderboardToggle) {
-        this.leaderboardToggle = false;
-        console.log("false");
-        this.$emit("leaderboardToggledOff", false);
-      } else {
-        this.leaderboardToggle = true;
-        console.log("true");
-        this.$emit("leaderboardToggledOn", true);
-      }
+    quit() {
+      location.reload()
     }
   }
 };
@@ -40,12 +29,12 @@ export default {
   position: relative;
 }
 
-.leaderboardBtn {
+.exitBtn {
   padding: 1.3rem;
   cursor: pointer;
   position: fixed;
   top: 2%;
-  right: 6.4%;
+  right: 1%;
   z-index: 500;
   color: white;
   background: #ed4c67;
@@ -57,7 +46,7 @@ export default {
   transition: all 0.1s;
 }
 
-.leaderboardBtn:hover {
+.exitBtn:hover {
   background-color: white;
   color: #ed4c67;
 }

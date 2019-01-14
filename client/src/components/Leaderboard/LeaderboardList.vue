@@ -30,7 +30,6 @@ export default {
       axios
         .get("https://geniusify-quiz.firebaseio.com/Players.json")
         .then(response => {
-          console.log(response.data);
           this.players = response.data;
         });
     }

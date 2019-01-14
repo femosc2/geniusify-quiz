@@ -22,7 +22,7 @@ export default {
 .progressBar {
   height: 3.2rem;
   background-color: white;
-  border-radius: 100px;
+  border-radius: 0px 65px 65px 0px;
   width: 100%;
   animation: progressBar 300s 1 linear;
   transition: 1s;

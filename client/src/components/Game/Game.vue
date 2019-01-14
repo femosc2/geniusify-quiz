@@ -33,6 +33,7 @@
     />
     <game-progress v-if="isGenreChoosen && !gameOver"/>
     <game-game-over v-if="gameOver && isGenreChoosen" :score="score"/>
+    <game-exit v-if="isGenreChoosen && !gameOver" />
   </div>
 </template>
 
@@ -44,6 +45,7 @@ import GameInput from "./GameInput.vue";
 import GameProgress from "./GameProgress.vue";
 import GameCountdown from "./GameCountdown.vue";
 import GameGameOver from "./GameGameOver.vue";
+import GameExit from "./GameExit.vue";
 
 export default {
   data: function() {
@@ -53,7 +55,7 @@ export default {
       artist: "",
       image: "",
       lyrics: "",
-      words: ["test1", "test2", "test3"],
+      words: [],
       gameOver: false,
       yandexApiKey:
         "trnsl.1.1.20190108T134850Z.6e32519bf1b85f9c.9f5af2e7ab08f991dcc9779d57dd9994ace9305d",
@@ -67,11 +69,12 @@ export default {
     GameInput,
     GameProgress,
     GameCountdown,
-    GameGameOver
+    GameGameOver,
+    GameExit
   },
   methods: {
     getSongs() {
-      // Function for retrieving the song, artist, image and lyrics
+      // Function for retrieving the song, artist, image and lyrics from the back-end
       if (this.isGenreChoosen === "Rock") {
         this.playlist = "http://10.2.15.173:9022/genre/rock";
       } else if (this.isGenreChoosen === "Christmas") {
