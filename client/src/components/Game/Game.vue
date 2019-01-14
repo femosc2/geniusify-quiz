@@ -109,6 +109,7 @@ export default {
       }, 18 * 1000);
     },
     translateLyrics() {
+      //Method for translating lyrics
       axios
         .get(
           "https://cors-anywhere.herokuapp.com/https://translate.yandex.net/api/v1.5/tr.json/translate?lang=en-sv&text=" +
@@ -136,15 +137,18 @@ export default {
         });
     },
     isGameOver(boolean) {
+      //Recieves data which indicates if game is over.
       this.gameOver = boolean;
     },
     countdownDone(bool) {
       this.infoPage = false;
     },
     addScore() {
+      // Adds +1 to if user correctly guesses a lyric.
       this.score++;
     },
     game() {
+      // Runs the game. The game is 200 seconds long and when the game is over it posts the result to the database.
       setTimeout(() => {
         let currentScore = {
           name: this.name,
@@ -164,6 +168,7 @@ export default {
   },
   props: ["isGenreChoosen", "name"],
   created() {
+    //When the component is created run these methods.
     this.setSong();
     this.game();
   }

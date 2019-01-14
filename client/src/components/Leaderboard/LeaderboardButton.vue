@@ -17,6 +17,7 @@ export default {
   },
   methods: {
     toggleLeaderboard() {
+      // Toggles the visibility of the leaderboard on or off.
       if (this.leaderboardToggle) {
         this.leaderboardToggle = false;
         console.log("false");

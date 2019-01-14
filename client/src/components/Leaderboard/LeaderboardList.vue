@@ -5,6 +5,7 @@
       <transition-group name="fade">
         <li
           v-for="(player,index) in orderedPlayers" :key="index+1">
+          <!-- Index+1 is there in order for transition to work -->
           {{ player.name }} : {{ player.score }}
         </li>
       </transition-group>
@@ -25,6 +26,7 @@ export default {
   },
   methods: {
     getPlayers() {
+      // Gets the leaderboard from firebase.
       axios
         .get("https://geniusify-quiz.firebaseio.com/Players.json")
         .then(response => {
@@ -39,9 +41,10 @@ export default {
   props: ["isLeaderboardShowing"],
   computed: {
     orderedPlayers: function() {
-      this.leaderboard = _.orderBy(this.players, "score");
-      let reverseLeaderboard = this.leaderboard.reverse();
-      return reverseLeaderboard.slice(0, 10);
+      // Sorts the leaderboard by score.
+      this.leaderboard = _.orderBy(this.players, "score"); // Uses Lodash in order to sort the objects.
+      let reverseLeaderboard = this.leaderboard.reverse(); // Sorts the objects in the correct direction.
+      return reverseLeaderboard.slice(0, 10); // Only show the top 10 players on the leaderboard
     }
   }
 };

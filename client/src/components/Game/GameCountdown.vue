@@ -17,6 +17,7 @@ export default {
   },
   methods: {
     countdownTimer() {
+      //Countdown timer between the different songs
       setInterval(() => {
         this.countdown--;
         if (this.countdown === 0) {

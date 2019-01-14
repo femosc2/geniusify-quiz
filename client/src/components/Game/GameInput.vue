@@ -21,12 +21,13 @@ export default {
   },
   methods: {
     checkWord() {
+      // Checks if the user guess is correct.
       for (var i = 0; i < this.words.length; i++) {
         if (this.userGuess.toLowerCase() === this.words[i].toLowerCase()) {
-          this.correctWords.push(this.words[i]);
-          this.words.splice(i, 1);
-          this.userGuess = "";
-          this.$emit("correctGuess");
+          this.correctWords.push(this.words[i]); // adds the correct word to a new array
+          this.words.splice(i, 1); // Removes the word from the words array.
+          this.userGuess = ""; // Resets the user guess so the user wont have to manually delete it.
+          this.$emit("correctGuess"); // Tells Game.vue that the guess was correct.
         }
       }
     }

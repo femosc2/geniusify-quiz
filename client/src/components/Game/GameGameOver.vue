@@ -10,6 +10,7 @@
 export default {
   methods: {
     newGame() {
+      // Restarts the page to start a new game.
       location.reload();
     }
   },

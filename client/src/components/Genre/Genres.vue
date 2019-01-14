@@ -25,6 +25,7 @@ export default {
   },
   methods: {
     genreChoosen(genreSelected) {
+      // Lets the user choose a genre.
       this.isGenreChoosen = genreSelected;
       console.log("app state " + this.isGenreChoosen);
       this.$emit("genreSelected", this.isGenreChoosen);

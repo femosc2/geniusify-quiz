@@ -27,6 +27,7 @@ export default {
     // Method changing genreChosen from null to the selected genre.
     //$emit creates the event genreSelected and sends it with genreChosen to Genre.vue
     chosenGenre(genre) {
+      // Lets the user choose a genre.
       this.genreChosen = genre;
       this.$emit("genreSelected", this.genreChosen);
     }
